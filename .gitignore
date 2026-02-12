@@ -5,6 +5,12 @@
 
 # testing
 /coverage
+/playwright-report/
+/test-results/
+/blob-report/
+/cypress/screenshots/
+/cypress/videos/
+/cypress/downloads/
 
 # next.js
 /.next/
