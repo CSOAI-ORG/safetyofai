@@ -68,6 +68,37 @@ See `.env.example` for all required variables. At minimum:
 
 The app works with graceful fallbacks when API keys aren't configured.
 
+## Testing
+
+Full E2E coverage with both **Playwright** (multi-browser) and **Cypress**.
+
+```bash
+# Playwright — all browsers
+npx playwright install --with-deps
+npm run test:pw
+
+# Playwright — headed mode (visible browser)
+npm run test:pw:headed
+
+# Cypress — headless
+npm run test:cy
+
+# Cypress — interactive GUI
+npm run test:cy:open
+
+# Run both suites
+npm run test:e2e
+
+# CI build + test (used by GitHub Actions)
+npm run test:ci
+```
+
+**Playwright specs** (9 files, ~100 tests): landing, navigation, dashboard, scanner, threat-intel, byzantine, pricing, about, API routes — runs across Chromium, Firefox, WebKit, and mobile viewports.
+
+**Cypress specs** (6 files, ~60 tests): pages, dashboard, scanner, byzantine, API routes, pricing — with custom commands for scan workflows.
+
+**GitHub Actions** CI runs automatically on push/PR to `main` with Playwright, Cypress, lint, type-check, and build steps.
+
 ## CSOAI Stack Position
 
 ```
