@@ -41,7 +41,7 @@ export default function CertificationPage() {
             <div className="w-12 h-12 rounded-xl gradient-brand flex items-center justify-center text-2xl">🏅</div>
             <div>
               <h1 className="text-3xl font-bold text-foreground">POAI Certification</h1>
-              <p className="text-muted-foreground">Proof of AI — DARB Responsible AI Certification Standard</p>
+              <p className="text-muted-foreground">Proof of AI — Responsible AI Certification aligned with DARB standards</p>
             </div>
           </div>
           <p className="text-sm text-muted-foreground max-w-3xl">
@@ -105,7 +105,7 @@ export default function CertificationPage() {
 
             {/* NATO PRU Compliance */}
             <div className="mb-10">
-              <h2 className="text-xl font-semibold mb-4">NATO Principles of Responsible Use (PRU)</h2>
+              <h2 className="text-xl font-semibold mb-4">Principles of Responsible Use (aligned with NATO PRU framework)</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {pruPrinciples.map((p) => (
                   <div key={p.name} className="bg-card border border-border rounded-xl p-5">
@@ -132,9 +132,9 @@ export default function CertificationPage() {
               <h2 className="text-xl font-semibold mb-4">Multi-Signature Approval Required</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
-                  { role: 'Military Operations Authority', entity: 'NATO Command', status: 'Awaiting', algo: 'Ed25519' },
-                  { role: 'Legal Authority', entity: 'NATO Legal Advisor', status: 'Awaiting', algo: 'Ed25519' },
-                  { role: 'Ethics Authority', entity: 'NATO Ethics Committee', status: 'Awaiting', algo: 'Ed25519' },
+                  { role: 'Operations Authority', entity: 'CSOAI Operations Board', status: 'Awaiting', algo: 'Ed25519' },
+                  { role: 'Legal Authority', entity: 'CSOAI Legal Review', status: 'Awaiting', algo: 'Ed25519' },
+                  { role: 'Ethics Authority', entity: 'CSOAI Ethics Committee', status: 'Awaiting', algo: 'Ed25519' },
                 ].map((sig) => (
                   <div key={sig.role} className="bg-card border border-border rounded-xl p-5">
                     <div className="text-sm font-semibold mb-1">{sig.role}</div>

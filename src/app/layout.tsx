@@ -57,7 +57,7 @@ function Navigation() {
             <a href="/certification" className="text-muted-foreground hover:text-foreground transition-colors">Certification</a>
             <a href="/byzantine" className="text-muted-foreground hover:text-foreground transition-colors">AI3 Council</a>
             <a href="/dsrb" className="text-muted-foreground hover:text-foreground transition-colors">DSRB Pipeline</a>
-            <a href="/programs" className="text-muted-foreground hover:text-foreground transition-colors">DARPA Programs</a>
+            <a href="/programs" className="text-muted-foreground hover:text-foreground transition-colors">Safety Programs</a>
             <a href="/scanner" className="text-muted-foreground hover:text-foreground transition-colors">Scanner</a>
             <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
           </nav>
@@ -106,7 +106,7 @@ function Footer() {
             <h4 className="text-sm font-semibold mb-3">Ecosystem</h4>
             <div className="space-y-2 text-xs text-muted-foreground">
               <a href="https://csoai.org" className="block hover:text-foreground transition-colors">CSOAI.org</a>
-              <a href="/programs" className="block hover:text-foreground transition-colors">DARPA Programs</a>
+              <a href="/programs" className="block hover:text-foreground transition-colors">Safety Programs</a>
               <a href="/about" className="block hover:text-foreground transition-colors">About SOAI</a>
               <a href="/pricing" className="block hover:text-foreground transition-colors">Pricing</a>
             </div>

@@ -30,27 +30,27 @@ export default function ProgramsPage() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-12 rounded-xl gradient-brand flex items-center justify-center text-2xl">🔬</div>
             <div>
-              <h1 className="text-3xl font-bold text-foreground">DARPA Programs</h1>
-              <p className="text-muted-foreground">Integrated AI Safety Assessment Methodology</p>
+              <h1 className="text-3xl font-bold text-foreground">Safety Programs</h1>
+              <p className="text-muted-foreground">AI Safety Assessment Methodology — Aligned with Leading Research Frameworks</p>
             </div>
           </div>
           <p className="text-sm text-muted-foreground max-w-3xl">
-            SOAI integrates three DARPA programs into a unified assessment pipeline:
-            ASIMOV for ethical evaluation, SABER for adversarial red-teaming, and AIQ for
+            SOAI&apos;s assessment pipeline is aligned with methodologies from leading AI safety research programs:
+            ASIMOV-style ethical evaluation, SABER-style adversarial red-teaming, and AIQ-style
             mathematical capability guarantees.
           </p>
         </div>
 
         {/* Pipeline Overview */}
         <div className="bg-card border border-border rounded-xl p-6 mb-10">
-          <h2 className="text-lg font-semibold mb-4">Integrated Safety Pipeline</h2>
+          <h2 className="text-lg font-semibold mb-4">Safety Assessment Pipeline</h2>
           <div className="flex flex-col md:flex-row items-center gap-4">
             {[
               { name: 'ASIMOV', desc: 'Ethical Scenario Testing', icon: '⚖️', color: 'brand' },
               { name: 'SABER', desc: 'Adversarial Red-Teaming', icon: '🗡️', color: 'threat' },
               { name: 'AIQ', desc: 'Quantified Evaluation', icon: '📐', color: 'safety' },
               { name: 'Synthesis', desc: 'Multi-Dimensional Results', icon: '🧩', color: 'yellow' },
-              { name: 'Certification', desc: 'DARB Standard Decision', icon: '🏅', color: 'brand' },
+              { name: 'Certification', desc: 'DARB-Aligned Decision', icon: '🏅', color: 'brand' },
             ].map((step, i) => (
               <div key={step.name} className="flex items-center gap-3">
                 <div className="text-center">
@@ -88,10 +88,10 @@ export default function ProgramsPage() {
         {tab === 'asimov' && (
           <div>
             <div className="mb-6">
-              <h2 className="text-xl font-semibold mb-2">ASIMOV — Autonomy Standards and Ideals with Military Operational Values</h2>
+              <h2 className="text-xl font-semibold mb-2">ASIMOV-Aligned — Ethical Benchmarking Framework</h2>
               <p className="text-sm text-muted-foreground">
-                Quantitative benchmarks for evaluating ethical difficulty of AI system use cases.
-                Three evaluation frameworks integrated into SOAI.
+                Inspired by the DARPA ASIMOV program methodology. Quantitative benchmarks for evaluating
+                ethical difficulty of AI system use cases. Three evaluation frameworks adapted for SOAI.
               </p>
             </div>
 
@@ -135,10 +135,10 @@ export default function ProgramsPage() {
         {tab === 'saber' && (
           <div>
             <div className="mb-6">
-              <h2 className="text-xl font-semibold mb-2">SABER — Securing AI for Battlefield Effective Robustness</h2>
+              <h2 className="text-xl font-semibold mb-2">SABER-Aligned — Adversarial Red-Teaming Framework</h2>
               <p className="text-sm text-muted-foreground">
-                Operational AI red-teaming framework. 7 performer teams across US, Allies, and Industry.
-                Four-phase methodology from baseline through remediation verification.
+                Inspired by the DARPA SABER program methodology. Comprehensive AI red-teaming framework
+                with four-phase methodology from baseline through remediation verification.
               </p>
             </div>
 
@@ -207,10 +207,10 @@ export default function ProgramsPage() {
         {tab === 'aiq' && (
           <div>
             <div className="mb-6">
-              <h2 className="text-xl font-semibold mb-2">AIQ — Artificial Intelligence Quantified</h2>
+              <h2 className="text-xl font-semibold mb-2">AIQ-Aligned — Quantified Evaluation Framework</h2>
               <p className="text-sm text-muted-foreground">
-                Mathematical foundations for guaranteeing AI capabilities. Two technical areas:
-                TA1 (mathematical guarantees) and TA2 (evaluation at scale).
+                Inspired by the DARPA AIQ program methodology. Mathematical foundations for guaranteeing
+                AI capabilities. Two technical areas: TA1 (mathematical guarantees) and TA2 (evaluation at scale).
               </p>
             </div>
 

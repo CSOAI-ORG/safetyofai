@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
       systemVersion,
       developer: developer || 'Unknown',
       useCase: useCase || 'General',
-      frameworks: frameworks || ['NATO DARB', 'ISO/IEC 42001'],
+      frameworks: frameworks || ['DARB-aligned', 'ISO/IEC 42001'],
       status: 'INTAKE',
       pipeline: {
         stage1_intake: { status: 'in_progress', startedAt: new Date().toISOString() },
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
         biasMitigation: null,
       },
       signatures: {
-        militaryAuthority: null,
+        operationsAuthority: null,
         legalAuthority: null,
         ethicsAuthority: null,
       },
@@ -70,9 +70,9 @@ export async function GET(request: NextRequest) {
       verified: true,
       hashIntegrity: 'VALID',
       signatureVerification: {
-        militaryAuthority: { valid: true, signer: 'NATO Command', algorithm: 'Ed25519' },
-        legalAuthority: { valid: true, signer: 'NATO Legal Advisor', algorithm: 'Ed25519' },
-        ethicsAuthority: { valid: true, signer: 'NATO Ethics Committee', algorithm: 'Ed25519' },
+        operationsAuthority: { valid: true, signer: 'CSOAI Operations Board', algorithm: 'Ed25519' },
+        legalAuthority: { valid: true, signer: 'CSOAI Legal Review', algorithm: 'Ed25519' },
+        ethicsAuthority: { valid: true, signer: 'CSOAI Ethics Committee', algorithm: 'Ed25519' },
       },
       blockchainAnchor: {
         chain: 'Ethereum/Polygon',

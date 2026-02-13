@@ -41,7 +41,7 @@ const certificationChannels = [
 ];
 
 const complianceFrameworks = [
-  { name: 'NATO DARB', nations: 31, compliance: 94 },
+  { name: 'DARB (NATO-aligned)', nations: 31, compliance: 94 },
   { name: 'NIST AI RMF', nations: 5, compliance: 97 },
   { name: 'EU AI Act', nations: 27, compliance: 89 },
   { name: 'ISO/IEC 42001', nations: 40, compliance: 91 },
@@ -67,7 +67,7 @@ export default function DSRBPage() {
             </div>
           </div>
           <p className="text-sm text-muted-foreground max-w-3xl">
-            Mapped from Palantir Apollo architecture. Autonomous deployment of AI safety certifications
+            Designed for global-scale deployment of AI safety certifications
             across 40+ nations with compliance-aware change management, decentralized distribution,
             and sovereignty-preserving synchronization.
           </p>
@@ -192,7 +192,7 @@ export default function DSRBPage() {
                 <h3 className="font-semibold mb-2 text-brand-400">Multi-Cloud</h3>
                 <div className="space-y-1 text-muted-foreground text-xs">
                   <div>AWS (US, Europe)</div>
-                  <div>Azure (NATO partners)</div>
+                  <div>Azure (European partners)</div>
                   <div>GCP (Asia-Pacific)</div>
                 </div>
               </div>

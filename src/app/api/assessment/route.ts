@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// POST — Trigger a full DARPA-integrated assessment pipeline
+// POST — Trigger a full assessment pipeline (aligned with DARPA research methodology)
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
           guarantees: [],
         },
       },
-      frameworks: frameworks || ['NATO_DARB', 'NIST_AI_RMF', 'ISO_42001'],
+      frameworks: frameworks || ['DARB_ALIGNED', 'NIST_AI_RMF', 'ISO_42001'],
       agents: {
         assigned: 33,
         guardian: 11,

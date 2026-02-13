@@ -4,11 +4,11 @@ import { useState } from 'react';
 
 const assessmentDomains = [
   { id: 'safety', name: 'Safety Evaluation', icon: '🛡️', metrics: 847, status: 'active', description: 'Behavioral safety testing across ethical scenario spectrums' },
-  { id: 'robustness', name: 'Robustness Testing', icon: '🔒', metrics: 1203, status: 'active', description: 'SABER adversarial red-teaming and vulnerability analysis' },
-  { id: 'compliance', name: 'Compliance Verification', icon: '📋', metrics: 592, status: 'active', description: 'NATO PRU, DARB, EU AI Act, NIST framework compliance' },
+  { id: 'robustness', name: 'Robustness Testing', icon: '🔒', metrics: 1203, status: 'active', description: 'Adversarial red-teaming and vulnerability analysis using SABER-aligned methodology' },
+  { id: 'compliance', name: 'Compliance Verification', icon: '📋', metrics: 592, status: 'active', description: 'Responsible AI principles, DARB-aligned standards, EU AI Act, NIST framework compliance' },
   { id: 'bias', name: 'Bias Analysis', icon: '⚖️', metrics: 431, status: 'active', description: 'Demographic parity, equalized odds, fairness metrics' },
   { id: 'explainability', name: 'Explainability', icon: '🔍', metrics: 318, status: 'active', description: 'SHAP, LIME, attention visualization, rule extraction' },
-  { id: 'capability', name: 'Capability Assurance', icon: '📊', metrics: 756, status: 'active', description: 'AIQ mathematical foundations and quantified guarantees' },
+  { id: 'capability', name: 'Capability Assurance', icon: '📊', metrics: 756, status: 'active', description: 'Mathematical foundations and quantified guarantees (AIQ-aligned methodology)' },
 ];
 
 const ontologyLayers = [
@@ -53,7 +53,7 @@ export default function CASAPage() {
             </div>
           </div>
           <p className="text-sm text-muted-foreground max-w-3xl">
-            Mapped from Palantir Gotham architecture. CASA ingests AI telemetry from heterogeneous sources,
+            Inspired by enterprise intelligence platforms, CASA ingests AI telemetry from heterogeneous sources,
             maintains a dynamic ontology for AI governance, and provides the intelligence foundation
             for the entire SOAI certification pipeline.
           </p>

@@ -98,7 +98,7 @@ export default function HomePage() {
               {
                 icon: Shield,
                 title: 'Byzantine Council Integration',
-                description: 'Connected to CSOAI\'s 33-agent Byzantine Council across 6 continents. Every safety decision is fault-tolerant and geographically distributed.',
+                description: 'Powered by CSOAI\'s 33-agent Byzantine Council across 6 continents. Every safety decision is fault-tolerant and geographically distributed.',
                 features: ['33 AI Agents', '6 Continents', '3 Architecture Families', '99.99% Uptime'],
                 accent: 'brand',
               },
@@ -199,10 +199,10 @@ export default function HomePage() {
               <div className="space-y-4">
                 {[
                   'CASA intelligence layer ingests AI telemetry from 40+ nation sources',
-                  'DARPA-integrated assessment: ASIMOV (ethical), SABER (red-team), AIQ (guarantees)',
-                  'DARB certification with multi-signature Ed25519, IPFS, blockchain anchoring',
-                  'Zero-trust architecture with cell-level security (Accumulo-style)',
-                  'NATO PRU compliance: Lawfulness, Accountability, Reliability, Governability, Bias',
+                  'Research-aligned assessment: ASIMOV-style ethical, SABER-style red-team, AIQ-style guarantees',
+                  'DARB-aligned certification with multi-signature Ed25519, IPFS, blockchain anchoring',
+                  'Zero-trust architecture with cell-level security',
+                  'Responsible AI principles aligned with NATO PRU framework',
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-safety-500 flex-shrink-0 mt-0.5" />
@@ -218,10 +218,10 @@ export default function HomePage() {
                   <span className="text-sm font-mono text-safety-400">CSOAI Stack — All Systems Operational</span>
                 </div>
                 {[
-                  { name: 'CASA', role: 'Intelligence & Analytics (Gotham)', status: 'Active' },
-                  { name: 'SOAI + POAI', role: 'Certification Platform (Foundry)', status: 'Active' },
-                  { name: 'AI3 Council', role: '33 Assessment Agents (AIP)', status: 'Online' },
-                  { name: 'DSRB Pipeline', role: '40-Nation Distribution (Apollo)', status: 'Active' },
+                  { name: 'CASA', role: 'Intelligence & Analytics', status: 'Active' },
+                  { name: 'SOAI + POAI', role: 'Certification Platform', status: 'Active' },
+                  { name: 'AI3 Council', role: '33 Assessment Agents', status: 'Online' },
+                  { name: 'DSRB Pipeline', role: '40-Nation Distribution', status: 'Active' },
                   { name: 'CSOAI Platform', role: 'Governance & Licensing', status: 'Active' },
                   { name: 'CEASAI Training', role: '20-Week Analyst Cert', status: 'Active' },
                 ].map((svc) => (
