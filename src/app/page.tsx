@@ -1,6 +1,6 @@
 'use client';
 
-import { Shield, Scan, Brain, Globe, Lock, Zap, Users, Activity, ChevronRight, CheckCircle2, AlertTriangle, Eye, Radio } from 'lucide-react';
+import { Shield, Scan, Brain, Globe, Lock, Zap, Users, Activity, ChevronRight, CheckCircle2, AlertTriangle, Eye, Radio, BarChart3, Cpu, FileSearch, Database } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -168,10 +168,13 @@ export default function HomePage() {
             {[
               { icon: Eye, title: 'Deepfake Detection', desc: 'AI-generated image, video, and audio detection with multi-model consensus verification.' },
               { icon: Scan, title: 'URL Scanner', desc: 'Real-time scanning against 4 threat intelligence databases plus multi-AI analysis.' },
-              { icon: Lock, title: 'Content Verification', desc: 'Determine if text was AI-generated with confidence scoring from multiple models.' },
-              { icon: AlertTriangle, title: 'Phishing Protection', desc: 'Instant detection of phishing attempts using community databases and AI analysis.' },
-              { icon: Activity, title: 'Security Dashboard', desc: 'Real-time monitoring, threat feeds, security score, and scan history in one view.' },
-              { icon: Users, title: 'Community Reputation', desc: 'Report threats, earn reputation points, and contribute to collective AI safety.' },
+              { icon: Lock, title: 'Prompt Injection Shield', desc: 'Real-time detection and blocking of direct and indirect prompt injection attacks at the inference layer.' },
+              { icon: BarChart3, title: 'Model Security Leaderboard', desc: 'Independent security rankings for LLMs — injection resistance, data leakage, agentic robustness scores.' },
+              { icon: Cpu, title: 'Runtime Defense', desc: 'Inference-layer security monitoring every AI request in real-time with sub-25ms latency overhead.' },
+              { icon: FileSearch, title: 'Supply Chain Security', desc: 'Scan model artifacts for serialization exploits, malware, and dependency vulnerabilities before deployment.' },
+              { icon: Database, title: 'AI Bill of Materials', desc: 'Auto-generated AIBOM for every model — auditable inventory of components, datasets, and dependencies.' },
+              { icon: Activity, title: 'Security Dashboard', desc: 'Real-time monitoring, threat feeds, security score, and scan history in one unified view.' },
+              { icon: Users, title: 'PII Auto-Redaction', desc: 'Automatically detect and scrub SSN, credit cards, emails, and phone numbers before they reach the model.' },
             ].map((feature) => (
               <div key={feature.title} className="rounded-xl bg-card border border-border p-6 hover:border-brand-500/20 transition-colors">
                 <feature.icon className="w-5 h-5 text-brand-400 mb-3" />
@@ -237,6 +240,56 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why SafetyOf.AI */}
+      <section className="py-20 border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Why Organizations Choose{' '}
+              <span className="text-brand-400">SafetyOf.AI</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              End-to-end AI security combining runtime defense, supply chain scanning, model evaluation, and governance — all in one platform.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+            {[
+              { value: '12,943', label: 'Security Tests / Week', sub: 'Automated red-teaming' },
+              { value: '<25ms', label: 'Scan Latency', sub: 'Near-zero overhead' },
+              { value: '12+', label: 'Models Ranked', sub: 'Security leaderboard' },
+              { value: '8', label: 'Attack Vectors', sub: 'Continuously updated' },
+            ].map((stat) => (
+              <div key={stat.label} className="rounded-xl bg-card border border-border p-6 text-center">
+                <p className="text-3xl font-bold text-brand-400">{stat.value}</p>
+                <p className="text-sm font-medium mt-1">{stat.label}</p>
+                <p className="text-xs text-muted-foreground mt-1">{stat.sub}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Compliance Frameworks */}
+          <div className="rounded-2xl bg-card border border-border p-8">
+            <h3 className="text-lg font-semibold mb-6 text-center">Aligned with Leading Security Frameworks</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {[
+                { name: 'NIST AI RMF', desc: 'Risk Management' },
+                { name: 'MITRE ATLAS', desc: 'Adversarial Threats' },
+                { name: 'OWASP LLM Top 10', desc: 'LLM Vulnerabilities' },
+                { name: 'ISO 42001', desc: 'AI Management' },
+                { name: 'EU AI Act', desc: 'EU Compliance' },
+                { name: 'DARB Standards', desc: 'Defense Certification' },
+              ].map((fw) => (
+                <div key={fw.name} className="text-center p-3 rounded-lg bg-background border border-border">
+                  <p className="text-xs font-semibold text-brand-400">{fw.name}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{fw.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

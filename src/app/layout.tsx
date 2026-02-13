@@ -53,12 +53,12 @@ function Navigation() {
           </div>
 
           <nav className="hidden lg:flex items-center gap-5 text-sm">
-            <a href="/casa" className="text-muted-foreground hover:text-foreground transition-colors">CASA</a>
+            <a href="/runtime" className="text-muted-foreground hover:text-foreground transition-colors">Runtime Defense</a>
+            <a href="/leaderboard" className="text-muted-foreground hover:text-foreground transition-colors">Leaderboard</a>
+            <a href="/scanner" className="text-muted-foreground hover:text-foreground transition-colors">Scanner</a>
             <a href="/certification" className="text-muted-foreground hover:text-foreground transition-colors">Certification</a>
             <a href="/byzantine" className="text-muted-foreground hover:text-foreground transition-colors">AI3 Council</a>
-            <a href="/dsrb" className="text-muted-foreground hover:text-foreground transition-colors">DSRB Pipeline</a>
-            <a href="/programs" className="text-muted-foreground hover:text-foreground transition-colors">Safety Programs</a>
-            <a href="/scanner" className="text-muted-foreground hover:text-foreground transition-colors">Scanner</a>
+            <a href="/programs" className="text-muted-foreground hover:text-foreground transition-colors">Programs</a>
             <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
           </nav>
 
@@ -92,22 +92,24 @@ function Footer() {
             </p>
           </div>
           <div>
-            <h4 className="text-sm font-semibold mb-3">Platform</h4>
+            <h4 className="text-sm font-semibold mb-3">Security</h4>
             <div className="space-y-2 text-xs text-muted-foreground">
-              <a href="/casa" className="block hover:text-foreground transition-colors">CASA Assessments</a>
+              <a href="/runtime" className="block hover:text-foreground transition-colors">Runtime Defense</a>
+              <a href="/leaderboard" className="block hover:text-foreground transition-colors">Model Leaderboard</a>
+              <a href="/scanner" className="block hover:text-foreground transition-colors">URL Scanner</a>
               <a href="/certification" className="block hover:text-foreground transition-colors">POAI Certification</a>
               <a href="/byzantine" className="block hover:text-foreground transition-colors">AI3 Council</a>
-              <a href="/dsrb" className="block hover:text-foreground transition-colors">DSRB Pipeline</a>
-              <a href="/scanner" className="block hover:text-foreground transition-colors">Security Scanner</a>
               <a href="/dashboard" className="block hover:text-foreground transition-colors">Dashboard</a>
             </div>
           </div>
           <div>
-            <h4 className="text-sm font-semibold mb-3">Ecosystem</h4>
+            <h4 className="text-sm font-semibold mb-3">Platform</h4>
             <div className="space-y-2 text-xs text-muted-foreground">
-              <a href="https://csoai.org" className="block hover:text-foreground transition-colors">CSOAI.org</a>
+              <a href="/casa" className="block hover:text-foreground transition-colors">CASA Intelligence</a>
+              <a href="/dsrb" className="block hover:text-foreground transition-colors">DSRB Pipeline</a>
               <a href="/programs" className="block hover:text-foreground transition-colors">Safety Programs</a>
-              <a href="/about" className="block hover:text-foreground transition-colors">About SOAI</a>
+              <a href="https://csoai.org" className="block hover:text-foreground transition-colors">CSOAI.org</a>
+              <a href="/about" className="block hover:text-foreground transition-colors">About</a>
               <a href="/pricing" className="block hover:text-foreground transition-colors">Pricing</a>
             </div>
           </div>
