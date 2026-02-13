@@ -86,7 +86,7 @@ export default function ByzantineCouncilPage() {
             Byzantine Council
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
-            33 independent AI agents across 3 architectural families — fault-tolerant consensus verification
+            33 AI agents across 5 providers (OpenAI, Anthropic, Google, Kimi, DeepSeek) — 22/33 Byzantine consensus
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -115,9 +115,9 @@ export default function ByzantineCouncilPage() {
       {/* Architecture Families */}
       <div className="grid md:grid-cols-3 gap-4 mb-8">
         {[
-          { family: 'A', label: 'Family A — Transformers', desc: '11 transformer-based models (GPT, Claude, Gemini, Llama, etc.)', icon: Zap },
-          { family: 'B', label: 'Family B — Alternative', desc: '11 alternative architectures (RNN, CNN, GNN, SSM, etc.)', icon: Network },
-          { family: 'C', label: 'Family C — Symbolic', desc: '11 symbolic/hybrid systems (ProverBot, LEAN, Bayesian, etc.)', icon: Server },
+          { family: 'A', label: 'Guardian Group', desc: '11 agents — Safety, Security, Privacy analysis (OpenAI, Anthropic, Google)', icon: Zap },
+          { family: 'B', label: 'Arbiter Group', desc: '11 agents — Fairness, Transparency, Accountability (Kimi, DeepSeek, alternative)', icon: Network },
+          { family: 'C', label: 'Scribe Group', desc: '11 agents — Documentation, Compliance, Certification (symbolic/hybrid)', icon: Server },
         ].map((f) => (
           <div key={f.family} className="rounded-xl bg-card border border-border p-5">
             <div className="flex items-center gap-3 mb-2">

@@ -198,11 +198,11 @@ export default function HomePage() {
               </p>
               <div className="space-y-4">
                 {[
-                  'Byzantine Council monitoring for all AI systems under CSOAI governance',
-                  'Integrated compliance verification for EU AI Act and global frameworks',
-                  'CEASAI analyst workbench with real-time threat intelligence',
-                  'Prosperity Fund contribution tracking with cryptographic verification',
-                  'Cross-platform protection: Web, Chrome Extension, Desktop, Mobile',
+                  'CASA intelligence layer ingests AI telemetry from 40+ nation sources',
+                  'DARPA-integrated assessment: ASIMOV (ethical), SABER (red-team), AIQ (guarantees)',
+                  'DARB certification with multi-signature Ed25519, IPFS, blockchain anchoring',
+                  'Zero-trust architecture with cell-level security (Accumulo-style)',
+                  'NATO PRU compliance: Lawfulness, Accountability, Reliability, Governability, Bias',
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-safety-500 flex-shrink-0 mt-0.5" />
@@ -218,12 +218,12 @@ export default function HomePage() {
                   <span className="text-sm font-mono text-safety-400">CSOAI Stack — All Systems Operational</span>
                 </div>
                 {[
-                  { name: 'SafetyOf.AI', role: 'Security Layer', status: 'Active' },
-                  { name: 'Byzantine Council', role: '33 Agents', status: 'Online' },
-                  { name: 'CSOAI Platform', role: 'Governance', status: 'Active' },
-                  { name: 'CEASAI Training', role: 'Certification', status: 'Active' },
-                  { name: 'Prosperity Fund', role: 'Economic Justice', status: 'Tracking' },
-                  { name: 'Watchdog System', role: 'Public Oversight', status: 'Monitoring' },
+                  { name: 'CASA', role: 'Intelligence & Analytics (Gotham)', status: 'Active' },
+                  { name: 'SOAI + POAI', role: 'Certification Platform (Foundry)', status: 'Active' },
+                  { name: 'AI3 Council', role: '33 Assessment Agents (AIP)', status: 'Online' },
+                  { name: 'DSRB Pipeline', role: '40-Nation Distribution (Apollo)', status: 'Active' },
+                  { name: 'CSOAI Platform', role: 'Governance & Licensing', status: 'Active' },
+                  { name: 'CEASAI Training', role: '20-Week Analyst Cert', status: 'Active' },
                 ].map((svc) => (
                   <div key={svc.name} className="flex items-center justify-between py-2.5 px-3 rounded-lg bg-card border border-border">
                     <div className="flex items-center gap-3">

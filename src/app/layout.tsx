@@ -52,11 +52,13 @@ function Navigation() {
             </span>
           </div>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">Dashboard</a>
+          <nav className="hidden lg:flex items-center gap-5 text-sm">
+            <a href="/casa" className="text-muted-foreground hover:text-foreground transition-colors">CASA</a>
+            <a href="/certification" className="text-muted-foreground hover:text-foreground transition-colors">Certification</a>
+            <a href="/byzantine" className="text-muted-foreground hover:text-foreground transition-colors">AI3 Council</a>
+            <a href="/dsrb" className="text-muted-foreground hover:text-foreground transition-colors">DSRB Pipeline</a>
+            <a href="/programs" className="text-muted-foreground hover:text-foreground transition-colors">DARPA Programs</a>
             <a href="/scanner" className="text-muted-foreground hover:text-foreground transition-colors">Scanner</a>
-            <a href="/threat-intel" className="text-muted-foreground hover:text-foreground transition-colors">Threat Intel</a>
-            <a href="/byzantine" className="text-muted-foreground hover:text-foreground transition-colors">Byzantine Council</a>
             <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
           </nav>
 
@@ -92,19 +94,21 @@ function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-3">Platform</h4>
             <div className="space-y-2 text-xs text-muted-foreground">
-              <a href="/dashboard" className="block hover:text-foreground transition-colors">Dashboard</a>
+              <a href="/casa" className="block hover:text-foreground transition-colors">CASA Assessments</a>
+              <a href="/certification" className="block hover:text-foreground transition-colors">POAI Certification</a>
+              <a href="/byzantine" className="block hover:text-foreground transition-colors">AI3 Council</a>
+              <a href="/dsrb" className="block hover:text-foreground transition-colors">DSRB Pipeline</a>
               <a href="/scanner" className="block hover:text-foreground transition-colors">Security Scanner</a>
-              <a href="/threat-intel" className="block hover:text-foreground transition-colors">Threat Intelligence</a>
-              <a href="/byzantine" className="block hover:text-foreground transition-colors">Byzantine Council</a>
+              <a href="/dashboard" className="block hover:text-foreground transition-colors">Dashboard</a>
             </div>
           </div>
           <div>
-            <h4 className="text-sm font-semibold mb-3">CSOAI Stack</h4>
+            <h4 className="text-sm font-semibold mb-3">Ecosystem</h4>
             <div className="space-y-2 text-xs text-muted-foreground">
               <a href="https://csoai.org" className="block hover:text-foreground transition-colors">CSOAI.org</a>
+              <a href="/programs" className="block hover:text-foreground transition-colors">DARPA Programs</a>
               <a href="/about" className="block hover:text-foreground transition-colors">About SOAI</a>
               <a href="/pricing" className="block hover:text-foreground transition-colors">Pricing</a>
-              <span className="block">API Docs (Coming Soon)</span>
             </div>
           </div>
           <div>
