@@ -1,6 +1,6 @@
 'use client';
 
-import { Shield, Scan, Brain, Globe, Lock, Zap, Users, Activity, ChevronRight, CheckCircle2, AlertTriangle, Eye, Radio, BarChart3, Cpu, FileSearch, Database } from 'lucide-react';
+import { Shield, Scan, Brain, Globe, Lock, Zap, Users, Activity, ChevronRight, CheckCircle2, AlertTriangle, Eye, Radio, BarChart3, Cpu, FileSearch, Database, Calendar } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -18,33 +18,33 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6">
-              <span className="text-foreground">The AI Safety</span>
+              <span className="text-foreground">AI Governance</span>
               <br />
               <span className="bg-gradient-to-r from-brand-400 to-safety-400 bg-clip-text text-transparent">
-                Shield You Need
+                Compliance Platform
               </span>
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Multi-AI consensus verification powered by 33 independent agents. Detect deepfakes, scan threats, verify content — all in real-time. The security layer for the Council for the Safety of AI.
+              Automate AI compliance across EU AI Act, NIST AI RMF, GDPR & DORA. Powered by 12+ MCP tools, A2A agent coordination, and OpenClaw gateway.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="/dashboard" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl gradient-brand text-white font-semibold text-base hover:opacity-90 transition-opacity shadow-lg shadow-brand-500/25">
-                <Shield className="w-5 h-5" />
-                Launch Dashboard
-                <ChevronRight className="w-4 h-4" />
-              </a>
-              <a href="/scanner" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-card border border-border text-foreground font-semibold text-base hover:bg-accent transition-colors">
-                <Scan className="w-5 h-5" />
-                Try Free Scan
-              </a>
+               <a href="/compliance" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl gradient-brand text-white font-semibold text-base hover:opacity-90 transition-opacity shadow-lg shadow-brand-500/25">
+                 <Shield className="w-5 h-5" />
+                 Start Compliance Scan
+                 <ChevronRight className="w-4 h-4" />
+               </a>
+               <a href="/regulatory" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-card border border-border text-foreground font-semibold text-base hover:bg-accent transition-colors">
+                 <Calendar className="w-5 h-5" />
+                 View Regulatory Tracker
+               </a>
             </div>
 
             <div className="flex items-center justify-center gap-8 mt-10 text-sm text-muted-foreground">
-              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-safety-500" /> 3 free scans/day</span>
-              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-safety-500" /> No credit card</span>
-              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-safety-500" /> 4 AI models</span>
+               <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-safety-500" /> 12+ MCP tools</span>
+               <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-safety-500" /> A2A agent coordination</span>
+               <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-safety-500" /> Free tier available</span>
             </div>
           </div>
 
