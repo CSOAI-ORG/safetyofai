@@ -3,7 +3,7 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "outputDirectory": ".next",
-  "regions": ["iad1", "lhr1", "sfo1"],
+  "regions": ["iad1"],
   "env": {
     "NEXT_PUBLIC_APP_NAME": "SafetyOf.AI",
     "NEXT_PUBLIC_APP_URL": "https://safetyof.ai"
