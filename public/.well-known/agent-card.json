@@ -1,0 +1,124 @@
+{
+  "agent": {
+    "name": "SafetyOf.AI Governance Agent",
+    "version": "1.0.0",
+    "description": "AI governance compliance agent — EU AI Act, NIST AI RMF, GDPR, DORA",
+    "homepage": "https://safetyof.ai",
+    "repository": "https://github.com/CSOAI-ORG/safetyofai",
+    "vendor": "CSOAI",
+    "license": "MIT",
+    
+    "authentication": {
+      "schemes": ["none"],
+      "securitySchemes": {
+        "apiKey": {
+          "type": "apiKey",
+          "in": "header",
+          "name": "X-API-Key"
+        }
+      }
+    },
+    
+    "skills": [
+      {
+        "name": "compliance_check",
+        "description": "Run AI compliance scan against EU AI Act, NIST AI RMF, GDPR",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "systemType": { "type": "string", "enum": ["model", "data", "system"] },
+            "regulations": { 
+              "type": "array", 
+              "items": { "type": "string", "enum": ["EU AI Act", "NIST AI RMF", "GDPR", "DORA", "PCI DSS", "SOC 2"] }
+          },
+          "required": ["systemType", "regulations"]
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "overallScore": { "type": "number" },
+            "criticalIssues": { "type": "number" },
+            "mcpsUsed": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "pricing": {
+          "model": "outcome",
+          "amount": 99,
+          "currency": "USD",
+          "unit": "per_compliance_check",
+          "tier": "pro"
+        }
+      },
+      {
+        "name": "regulatory_tracker",
+        "description": "Monitor EU AI Act cliff dates, regulatory changes",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "daysAhead": { "type": "number", "default": 90 }
+          }
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "cliffDates": { "type": "array" },
+            "upcomingChanges": { "type": "array" }
+          }
+        },
+        "pricing": {
+          "model": "subscription",
+          "amount": 9900,
+          "currency": "USD",
+          "interval": "month",
+          "tier": "pro"
+        }
+      },
+      {
+        "name": "audit_report_generate",
+        "description": "Generate audit-ready compliance report with signed evidence",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "regulations": { "type": "array" },
+            "format": { "type": "string", "enum": ["PDF", "JSON", "HTML"] }
+          }
+        },
+        "pricing": {
+          "model": "outcome",
+          "amount": 499,
+          "currency": "USD",
+          "unit": "per_report",
+          "tier": "enterprise"
+        }
+      }
+    ],
+    
+    "a2aEndpoint": "https://safetyof.ai/api/a2a",
+    "mcpEndpoint": "https://safetyof.ai/api/mcp",
+    "ap2Payment": {
+      "provider": "stripe",
+      "currency": "USD",
+      "methods": ["card", "bank_transfer"],
+      "webhook": "https://safetyof.ai/api/stripe-webhook"
+    },
+    
+    "capabilities": {
+      "streaming": true,
+      "caching": true,
+      "batchProcessing": true,
+      "multiAgentCoordination": true
+    },
+    
+    "compliance": {
+      "frameworks": ["EU AI Act", "NIST AI RMF", "GDPR", "DORA", "ISO 42001"],
+      "certifications": ["SOC 2 Type II", "ISO 27001"],
+      "auditTrail": true
+    },
+    
+    "contact": {
+      "name": "Nicholas Templeman",
+      "email": "nicholas@meok.ai",
+      "role": "CEO, CSOAI"
+    }
+  }
+}
