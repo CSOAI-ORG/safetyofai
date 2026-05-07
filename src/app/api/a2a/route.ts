@@ -1,9 +1,22 @@
 import { NextResponse } from 'next/server';
 
 // A2A Protocol v1.0 endpoint for agent-to-agent communication
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
 export async function GET() {
-  const agentCard = await import('../../public/.well-known/agent-card.json');
-  return NextResponse.json(agentCard.default || agentCard);
+  try {
+    const filePath = join(process.cwd(), 'public', '.well-known', 'agent-card.json');
+    const fileContent = readFileSync(filePath, 'utf-8');
+    const agentCard = JSON.parse(fileContent);
+    return NextResponse.json(agentCard);
+  } catch (error) {
+    console.error('Agent Card error:', error);
+    return NextResponse.json(
+      { error: 'Agent Card not found' },
+      { status: 404 }
+    );
+  }
 }
 
 export async function POST(request: Request) {
