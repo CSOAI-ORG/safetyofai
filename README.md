@@ -1,5 +1,6 @@
 # SafetyOf.AI — The Security Layer for CSOAI
 
+[![SafeSkill 50/100](https://img.shields.io/badge/SafeSkill-50%2F100_Use%20with%20Caution-orange)](https://safeskill.dev/scan/csoai-org-safetyofai)
 Multi-AI consensus security platform. Real-time threat detection, Byzantine Council verification, and AI safety compliance — the security layer powering the Council for the Safety of AI.
 
 ## Stack
