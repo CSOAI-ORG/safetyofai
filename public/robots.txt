@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://safetyof.ai/sitemap.xml

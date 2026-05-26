@@ -2,30 +2,31 @@ import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2026-05-01',
+  apiVersion: '2023-10-16',
 });
 
 export async function POST(request: Request) {
   const body = await request.json();
   const { priceId, customerEmail, tier } = body;
 
+  if (!priceId || !priceId.startsWith('price_')) {
+    return NextResponse.json({ error: 'Invalid or missing price ID. Check your Stripe configuration.' }, { status: 400 });
+  }
+
   try {
-    // Create or retrieve customer
-    let customer;
-    const existingCustomers = await stripe.customers.list({ email: customerEmail, limit: 1 });
-    
-    if (existingCustomers.data.length > 0) {
-      customer = existingCustomers.data[0];
-    } else {
-      customer = await stripe.customers.create({
-        email: customerEmail,
-        metadata: { tier },
-      });
+    let customerParams: { customer?: string; customer_email?: string } = {};
+
+    if (customerEmail) {
+      const existingCustomers = await stripe.customers.list({ email: customerEmail, limit: 1 });
+      if (existingCustomers.data.length > 0) {
+        customerParams = { customer: existingCustomers.data[0].id };
+      } else {
+        customerParams = { customer_email: customerEmail };
+      }
     }
 
-    // Create checkout session
     const session = await stripe.checkout.sessions.create({
-      customer: customer.id,
+      ...customerParams,
       payment_method_types: ['card'],
       line_items: [
         {

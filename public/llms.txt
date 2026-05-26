@@ -1,0 +1,40 @@
+# SafetyOf.AI — EU AI Act Compliance Platform
+
+> 48-hour EU AI Act compliance gap analysis, continuous monitoring, and HMAC-signed attestations for AI systems. From £5,000 per audit. 218 MCP servers for automated compliance.
+
+## Services
+- [EU AI Act Gap Analysis](https://safetyof.ai/compliance): 48-hour compliance audit with signed attestations, £5,000 fixed price
+- [Continuous Monitoring](https://safetyof.ai/regulatory): Real-time compliance drift detection, from £79/mo
+- [Free Compliance Scan](https://safetyof.ai/scanner): Instant AI risk classification under EU AI Act
+- [Byzantine Council](https://safetyof.ai/byzantine): 33-agent multi-AI consensus verification
+- [Threat Intelligence](https://safetyof.ai/threat-intel): Real-time threat detection across 4 databases
+
+## Frameworks Covered
+- EU AI Act (Articles 4-72, Annex III high-risk systems)
+- DORA (Digital Operational Resilience Act)
+- NIS2 (Network and Information Security Directive)
+- ISO 42001 (AI Management System)
+- GDPR (Data protection for AI systems)
+- SOC 2 (Trust Service Criteria)
+- NIST AI RMF (Risk Management Framework)
+
+## Pricing
+- Free: 3 compliance scans/day
+- Pro: £79/mo — unlimited scans, audit reports, MCP tools
+- Enterprise: £499/mo — full audit trails, HMAC attestations, priority support
+- Audit: £5,000 one-time — 48-hour comprehensive gap analysis
+
+## MCP Servers
+- 218 compliance MCP servers available on Smithery and PyPI
+- Install: `npx meok-setup --pack governance`
+- GitHub: https://github.com/CSOAI-ORG/eu-ai-act-compliance-mcp
+
+## Resources
+- [Pricing](https://safetyof.ai/pricing): Plans and features
+- [Regulatory Tracker](https://safetyof.ai/regulatory): Live EU AI Act deadline countdown
+- [Compliance Scanner](https://safetyof.ai/scanner): Free AI risk classification
+
+## Contact
+- Enterprise inquiries: hello@safetyof.ai
+- Book audit: https://safetyof.ai/pricing
+- GitHub: https://github.com/CSOAI-ORG

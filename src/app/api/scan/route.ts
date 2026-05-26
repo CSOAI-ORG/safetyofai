@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import type { AIModelResponse } from '@/lib/types';
 
 // URL Scanner API — Multi-source threat intelligence + AI analysis
 // Checks against PhishTank, URLhaus, OpenPhish, AlienVault OTX
@@ -131,7 +132,7 @@ export async function POST(req: NextRequest) {
 
     try {
       const consensusData = await consensusRes.json();
-      aiVerdicts = consensusData.aiResponses?.map((r: any) => ({
+      aiVerdicts = consensusData.aiResponses?.map((r: AIModelResponse) => ({
         provider: r.provider,
         safe: r.isSafe,
         confidence: r.confidence,

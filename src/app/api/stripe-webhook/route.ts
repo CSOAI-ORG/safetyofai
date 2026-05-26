@@ -1,56 +1,86 @@
 import { NextResponse } from 'next/server';
+import Stripe from 'stripe';
 
-// Stripe webhook handler for ACP (AI Commerce Protocol)
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: '2023-10-16',
+});
+
 export async function POST(request: Request) {
   const body = await request.text();
   const signature = request.headers.get('stripe-signature');
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
-  let event;
+  let event: Stripe.Event;
+
+  if (!signature) {
+    return NextResponse.json({ error: 'Missing stripe-signature header' }, { status: 400 });
+  }
+
+  if (!webhookSecret) {
+    return NextResponse.json({ error: 'Webhook secret not configured' }, { status: 500 });
+  }
 
   try {
-    // In production, verify signature
-    // const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-    // event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
-    event = JSON.parse(body);
-  } catch (error) {
-    console.error('Webhook error:', error);
+    event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
+  } catch {
     return NextResponse.json({ error: 'Webhook signature verification failed' }, { status: 400 });
   }
 
-  // Handle subscription events
   try {
     switch (event.type) {
-      case 'checkout.session.completed':
-        const session = event.data.object;
-        console.log('Pro subscription created:', session.customer);
-        // TODO: Provision Pro access, send welcome email
+      case 'checkout.session.completed': {
+        const session = event.data.object as Stripe.Checkout.Session;
+        const customerEmail = (session.customer_details as Stripe.Checkout.Session.CustomerDetails)?.email;
+        const tier = session.metadata?.tier || 'pro';
+        
+        if (customerEmail && process.env.RESEND_API_KEY) {
+          try {
+            const resendResponse = await fetch('https://api.resend.com/v1/emails', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                from: 'MEOK AI <welcome@meok.ai>',
+                to: [customerEmail],
+                subject: `Welcome to MEOK ${tier === 'enterprise' ? 'Enterprise' : 'Pro'}`,
+                html: `
+                  <h2>Welcome to MEOK!</h2>
+                  <p>Thank you for subscribing to our ${tier} plan.</p>
+                  <p>Your access is now active. Visit <a href="https://try.meok.ai">try.meok.ai</a> to get started.</p>
+                  <p>If you have any questions, reply to this email.</p>
+                `,
+              }),
+            });
+            if (!resendResponse.ok) {
+              console.error('Failed to send welcome email:', await resendResponse.text());
+            }
+          } catch (emailError) {
+            console.error('Email send error:', emailError);
+          }
+        }
         break;
+      }
 
-      case 'invoice.payment_succeeded':
-        const invoice = event.data.object;
-        console.log('Payment succeeded for customer:', invoice.customer);
+      case 'invoice.payment_succeeded': {
         break;
+      }
 
-      case 'invoice.payment_failed':
-        const failedInvoice = event.data.object;
-        console.log('Payment failed for customer:', failedInvoice.customer);
-        // TODO: Downgrade to free tier
+      case 'invoice.payment_failed': {
         break;
+      }
 
-      case 'customer.subscription.deleted':
-        const subscription = event.data.object;
-        console.log('Subscription cancelled:', subscription.customer);
-        // TODO: Downgrade to free tier
+      case 'customer.subscription.deleted': {
         break;
+      }
 
       default:
-        console.log(`Unhandled event type: ${event.type}`);
+        break;
     }
 
     return NextResponse.json({ received: true });
-  } catch (error) {
-    console.error('Webhook handler error:', error);
+  } catch {
     return NextResponse.json({ error: 'Webhook handler failed' }, { status: 500 });
   }
 }

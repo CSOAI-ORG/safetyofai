@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
 
 @layer base {
   :root {
@@ -48,6 +47,9 @@
 @layer base {
   * {
     border-color: hsl(var(--border));
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
@@ -95,4 +97,19 @@
 
 .glow-threat {
   box-shadow: 0 0 20px rgba(239, 68, 68, 0.3), 0 0 60px rgba(239, 68, 68, 0.1);
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-80px) rotate(180deg) scale(1);
+  }
+  100% {
+    transform: translateY(120px) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
 }

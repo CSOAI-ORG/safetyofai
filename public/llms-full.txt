@@ -1,0 +1,119 @@
+# SafetyOf.AI — EU AI Act Compliance Platform (Full Documentation)
+
+> 48-hour EU AI Act compliance gap analysis, continuous monitoring, and HMAC-signed attestations for AI systems. From £5,000 per audit. 218 MCP servers for automated compliance. A MEOK AI LABS product.
+
+## About
+
+SafetyOf.AI is the EU AI Act compliance platform by MEOK AI LABS. It provides automated gap analysis, continuous regulatory monitoring, and cryptographically signed attestations for AI systems operating under EU jurisdiction. The platform is also the security layer for the Council for the Safety of AI (CSOAI), providing multi-AI consensus verification through 33 independent AI agents.
+
+## Services
+
+### EU AI Act Gap Analysis
+- 48-hour comprehensive compliance audit
+- HMAC-signed attestations for regulatory evidence
+- Fixed price: £5,000 per audit
+- Covers Articles 4-72, Annex III high-risk classification
+- URL: https://safetyof.ai/compliance
+
+### Continuous Compliance Monitoring
+- Real-time compliance drift detection
+- Automated alerts for regulatory changes
+- Dashboard with compliance score tracking
+- From £79/month
+- URL: https://safetyof.ai/regulatory
+
+### Free Compliance Scanner
+- Instant AI risk classification under EU AI Act
+- Risk tier determination (Unacceptable, High, Limited, Minimal)
+- 3 free scans per day
+- URL: https://safetyof.ai/scanner
+
+### Byzantine Council (AI3)
+- 33-agent multi-AI consensus verification
+- Byzantine fault-tolerant content verification
+- Deepfake detection and content authenticity
+- URL: https://safetyof.ai/byzantine
+
+### Threat Intelligence
+- Real-time threat detection across 4 databases
+- CVE monitoring for AI/ML libraries
+- Supply chain risk assessment
+- URL: https://safetyof.ai/threat-intel
+
+### Runtime Defense
+- Model behavior monitoring in production
+- Adversarial attack detection
+- Output validation and guardrails
+- URL: https://safetyof.ai/runtime
+
+### POAI Certification
+- Proof of AI Integrity certification
+- Third-party attestation of AI safety practices
+- URL: https://safetyof.ai/certification
+
+## Regulatory Frameworks Covered
+
+| Framework | Coverage |
+|-----------|----------|
+| EU AI Act | Articles 4-72, Annex III high-risk systems, GPAI requirements |
+| DORA | Digital Operational Resilience Act — ICT risk management for financial entities |
+| NIS2 | Network and Information Security Directive — critical infrastructure |
+| ISO 42001 | AI Management System standard |
+| GDPR | Data protection requirements for AI systems |
+| SOC 2 | Trust Service Criteria for AI service organizations |
+| NIST AI RMF | Risk Management Framework for AI |
+
+## Pricing Tiers
+
+| Plan | Price | Features |
+|------|-------|----------|
+| Free | £0 | 3 compliance scans/day, basic risk classification |
+| Pro | £79/mo | Unlimited scans, audit reports, MCP tools, regulatory alerts |
+| Enterprise | £499/mo | Full audit trails, HMAC attestations, priority support, custom integrations |
+| Audit | £5,000 one-time | 48-hour comprehensive gap analysis, signed attestation report |
+
+## MCP Servers (Model Context Protocol)
+
+SafetyOf.AI provides 218 compliance MCP servers for automated compliance checking integrated into development workflows.
+
+- Available on Smithery and PyPI
+- Install: `npx meok-setup --pack governance`
+- GitHub: https://github.com/CSOAI-ORG/eu-ai-act-compliance-mcp
+- Supports: Claude, Cursor, Windsurf, and other MCP-compatible tools
+
+### MCP Server Categories
+- EU AI Act compliance checks
+- Risk classification automation
+- Regulatory deadline tracking
+- Documentation generation
+- Audit trail management
+- GDPR data protection checks
+
+## Tools and Integrations
+
+- CLI tool for CI/CD pipeline integration
+- REST API for programmatic access
+- MCP servers for AI coding assistants
+- Webhook notifications for compliance events
+- Dashboard for team collaboration
+
+## Key Pages
+
+- [Homepage](https://safetyof.ai): Platform overview
+- [Compliance](https://safetyof.ai/compliance): EU AI Act gap analysis
+- [Regulatory Tracker](https://safetyof.ai/regulatory): Live EU AI Act deadline countdown
+- [Compliance Scanner](https://safetyof.ai/scanner): Free AI risk classification
+- [Byzantine Council](https://safetyof.ai/byzantine): Multi-AI consensus verification
+- [Runtime Defense](https://safetyof.ai/runtime): Production model monitoring
+- [Certification](https://safetyof.ai/certification): POAI certification
+- [Leaderboard](https://safetyof.ai/leaderboard): AI model safety rankings
+- [Programs](https://safetyof.ai/programs): Safety programs
+- [Pricing](https://safetyof.ai/pricing): Plans and features
+- [Dashboard](https://safetyof.ai/dashboard): User dashboard
+
+## Contact
+
+- Enterprise inquiries: hello@safetyof.ai
+- Book audit: https://safetyof.ai/pricing
+- GitHub: https://github.com/CSOAI-ORG
+- CSOAI: https://csoai.org

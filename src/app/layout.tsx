@@ -1,31 +1,92 @@
 import type { Metadata } from 'next';
+import { Inter, Fira_Code } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
+import MobileMenu from '@/components/MobileMenu';
 import './globals.css';
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  fallback: ['system-ui', 'sans-serif'],
+});
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+  fallback: ['monospace'],
+});
+
 export const metadata: Metadata = {
-  title: 'SafetyOf.AI — The Security Layer for CSOAI',
-  description: 'Multi-AI consensus security platform. Real-time threat detection, Byzantine Council verification, and AI safety compliance — the security layer powering the Council for the Safety of AI.',
-  keywords: ['AI safety', 'deepfake detection', 'threat intelligence', 'Byzantine Council', 'CSOAI', 'AI consensus', 'cybersecurity'],
+  title: 'SafetyOf.AI — Prove Your AI Is Safe. Before Regulators Ask.',
+  description:
+    '48-hour compliance audits, continuous monitoring, and cryptographic attestations for EU AI Act, DORA, NIS2, and ISO 42001. From £5,000.',
+  keywords: [
+    'EU AI Act compliance',
+    'AI compliance audit',
+    'AI risk classification',
+    'ISO 42001',
+    'DORA compliance',
+    'NIS2',
+    'AI safety platform',
+    'compliance monitoring',
+    'HMAC attestations',
+    'GDPR AI',
+  ],
   openGraph: {
-    title: 'SafetyOf.AI — The Security Layer for CSOAI',
-    description: 'Multi-AI consensus security. Verify content, detect deepfakes, block threats — powered by 33 independent AI agents.',
+    title: 'SafetyOf.AI — Prove Your AI Is Safe. Before Regulators Ask.',
+    description:
+      '48-hour compliance audits, continuous monitoring, and cryptographic attestations for EU AI Act, DORA, NIS2, and ISO 42001. From £5,000.',
     url: 'https://safetyof.ai',
     siteName: 'SafetyOf.AI',
     type: 'website',
+    locale: 'en_GB',
+    images: [
+      {
+        url: 'https://safetyof.ai/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SafetyOf.AI — EU AI Act Compliance Platform',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SafetyOf.AI — The Security Layer for CSOAI',
-    description: 'Multi-AI consensus security platform protecting the AI ecosystem.',
+    title: 'SafetyOf.AI — Prove Your AI Is Safe. Before Regulators Ask.',
+    description:
+      '48-hour compliance audits, continuous monitoring, and cryptographic attestations for EU AI Act, DORA, NIS2, and ISO 42001.',
+    images: ['https://safetyof.ai/og-image.png'],
+    creator: '@safetyofai',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://safetyof.ai',
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${inter.variable} ${firaCode.variable}`}>
+      <head>
+        <script
+          type="text/llms.txt"
+          dangerouslySetInnerHTML={{
+            __html: `SafetyOf.AI is an EU AI Act compliance platform by MEOK AI LABS. Services: 48-hour gap analysis (£5,000), continuous monitoring (from £79/mo), free compliance scanner. 218 MCP servers for automated compliance. Covers EU AI Act, DORA, NIS2, ISO 42001, GDPR. Book audit: safetyof.ai/pricing | GitHub: github.com/CSOAI-ORG`
+          }}
+        />
+      </head>
       <body className="min-h-screen bg-background antialiased">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground focus:outline-none">
+          Skip to content
+        </a>
         <Navigation />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
@@ -47,24 +108,24 @@ function Navigation() {
               <span className="text-brand-300">Of</span>
               <span className="text-white">.AI</span>
             </a>
-            <span className="hidden sm:inline text-xs bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded-full font-medium ml-1">
-              CSOAI Security Layer
+            <span className="hidden sm:inline text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-medium ml-1 font-mono">
+              Aug 2, 2026
             </span>
           </div>
 
+          <MobileMenu />
           <nav className="hidden lg:flex items-center gap-5 text-sm">
-            <a href="/runtime" className="text-muted-foreground hover:text-foreground transition-colors">Runtime Defense</a>
-            <a href="/leaderboard" className="text-muted-foreground hover:text-foreground transition-colors">Leaderboard</a>
-            <a href="/scanner" className="text-muted-foreground hover:text-foreground transition-colors">Scanner</a>
-            <a href="/certification" className="text-muted-foreground hover:text-foreground transition-colors">Certification</a>
-            <a href="/byzantine" className="text-muted-foreground hover:text-foreground transition-colors">AI3 Council</a>
-            <a href="/programs" className="text-muted-foreground hover:text-foreground transition-colors">Programs</a>
+            <a href="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">Free Scanner</a>
+            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
             <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+            <a href="/vs-vanta" className="text-muted-foreground hover:text-foreground transition-colors">vs Vanta</a>
+            <a href="/vs-drata" className="text-muted-foreground hover:text-foreground transition-colors">vs Drata</a>
+            <a href="/status" className="text-muted-foreground hover:text-foreground transition-colors">Status</a>
           </nav>
 
           <div className="flex items-center gap-3">
             <a href="/dashboard" className="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg gradient-brand text-white hover:opacity-90 transition-opacity">
-              Launch Dashboard
+              Start Free Scan
             </a>
           </div>
         </div>
@@ -88,43 +149,42 @@ function Footer() {
               <span className="font-bold text-sm">SafetyOf.AI</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              The security layer for the Council for the Safety of AI. Multi-AI consensus verification, Byzantine fault-tolerant monitoring, and real-time threat intelligence.
+              48-hour compliance audits, continuous monitoring, and cryptographic attestations for
+              EU AI Act, DORA, NIS2, ISO 42001, and GDPR. From £5,000.
             </p>
           </div>
           <div>
-            <h4 className="text-sm font-semibold mb-3">Security</h4>
+            <h4 className="text-sm font-semibold mb-3">Compliance</h4>
             <div className="space-y-2 text-xs text-muted-foreground">
-              <a href="/runtime" className="block hover:text-foreground transition-colors">Runtime Defense</a>
-              <a href="/leaderboard" className="block hover:text-foreground transition-colors">Model Leaderboard</a>
-              <a href="/scanner" className="block hover:text-foreground transition-colors">URL Scanner</a>
-              <a href="/certification" className="block hover:text-foreground transition-colors">POAI Certification</a>
-              <a href="/byzantine" className="block hover:text-foreground transition-colors">AI3 Council</a>
-              <a href="/dashboard" className="block hover:text-foreground transition-colors">Dashboard</a>
-            </div>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold mb-3">Platform</h4>
-            <div className="space-y-2 text-xs text-muted-foreground">
-              <a href="/casa" className="block hover:text-foreground transition-colors">CASA Intelligence</a>
-              <a href="/dsrb" className="block hover:text-foreground transition-colors">DSRB Pipeline</a>
-              <a href="/programs" className="block hover:text-foreground transition-colors">Safety Programs</a>
-              <a href="https://csoai.org" className="block hover:text-foreground transition-colors">CSOAI.org</a>
-              <a href="/about" className="block hover:text-foreground transition-colors">About</a>
+              <a href="/dashboard" className="block hover:text-foreground transition-colors">Free Scanner</a>
               <a href="/pricing" className="block hover:text-foreground transition-colors">Pricing</a>
+              <a href="/about" className="block hover:text-foreground transition-colors">About</a>
+              <a href="/status" className="block hover:text-foreground transition-colors">System Status</a>
+              <a href="/support" className="block hover:text-foreground transition-colors">Support</a>
             </div>
           </div>
           <div>
+            <h4 className="text-sm font-semibold mb-3">Frameworks</h4>
+            <div className="space-y-2 text-xs text-muted-foreground">
+              <span className="block">EU AI Act</span>
+              <span className="block">DORA</span>
+              <span className="block">NIS2</span>
+              <span className="block">ISO 42001</span>
+              <span className="block">GDPR</span>
+            </div>
+          </div>
+            <div>
             <h4 className="text-sm font-semibold mb-3">Legal</h4>
             <div className="space-y-2 text-xs text-muted-foreground">
-              <span className="block">Privacy Policy</span>
-              <span className="block">Terms of Service</span>
-              <span className="block">Cookie Policy</span>
+              <a href="/privacy" className="block hover:text-foreground transition-colors">Privacy Policy</a>
+              <a href="/terms" className="block hover:text-foreground transition-colors">Terms of Service</a>
+              <a href="/cookies" className="block hover:text-foreground transition-colors">Cookie Policy</a>
             </div>
           </div>
         </div>
         <div className="border-t border-border mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} SafetyOf.AI — A CSOAI Security Layer. All rights reserved.</p>
-          <p>Powered by Byzantine Council &bull; 33 Independent AI Agents</p>
+          <p>&copy; {new Date().getFullYear()} SafetyOf.AI — A MEOK AI LABS Company. All rights reserved.</p>
+          <p>EU AI Act &bull; DORA &bull; NIS2 &bull; ISO 42001 &bull; GDPR</p>
         </div>
       </div>
     </footer>

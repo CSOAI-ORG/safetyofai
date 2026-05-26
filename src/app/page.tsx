@@ -1,316 +1,582 @@
-'use client';
+import {
+  Shield,
+  Scan,
+  Lock,
+  CheckCircle2,
+  AlertTriangle,
+  Clock,
+  FileText,
+  Server,
+  Globe,
+  CreditCard,
+  ArrowRight,
+} from 'lucide-react';
+import { CountdownSection, FAQSection } from './HomeClient';
 
-import { Shield, Scan, Brain, Globe, Lock, Zap, Users, Activity, ChevronRight, CheckCircle2, AlertTriangle, Eye, Radio, BarChart3, Cpu, FileSearch, Database, Calendar } from 'lucide-react';
+const faqs = [
+  {
+    q: 'What is the EU AI Act and who does it affect?',
+    a: 'The EU AI Act is the world\'s first comprehensive AI regulation. It applies to any organization that develops, deploys, or uses AI systems within the EU market — including companies based outside the EU that serve EU customers. High-risk AI systems face the strictest requirements, including conformity assessments, risk management systems, and technical documentation.',
+  },
+  {
+    q: 'How long does a compliance audit take?',
+    a: 'Our initial gap analysis takes 48 hours from scan completion. You receive a detailed report identifying non-compliance areas, risk classifications under Article 6 and Annex III, and a prioritized remediation roadmap. Full audits with attestations typically complete within 2-4 weeks depending on system complexity.',
+  },
+  {
+    q: 'What frameworks does SafetyOf.AI cover?',
+    a: 'We cover the EU AI Act (all titles and annexes), DORA (Digital Operational Resilience Act for financial entities), NIS2 (Network and Information Security Directive), ISO 42001 (AI Management System), and GDPR Article 22 (automated decision-making). Our multi-framework engine maps controls across regulations to eliminate duplicate work.',
+  },
+  {
+    q: 'What are HMAC-SHA256 signed attestations?',
+    a: 'Every compliance report and audit artifact we generate is cryptographically signed using HMAC-SHA256. This creates a tamper-evident record that proves the integrity of your compliance evidence. Regulators and auditors can independently verify that documents haven\'t been altered after issuance.',
+  },
+  {
+    q: 'What are MCP servers and how do they help with compliance?',
+    a: 'MCP (Model Context Protocol) servers are standardized interfaces that connect AI systems to compliance tooling. Our 218 MCP servers automate evidence collection, policy enforcement, and monitoring across your AI stack. They continuously gather compliance data from your systems without manual intervention.',
+  },
+  {
+    q: 'Can I try SafetyOf.AI before committing to a paid plan?',
+    a: 'Yes. Our free tier includes 3 compliance scans per day with a basic risk score, no credit card required. You can run scans immediately and see results in seconds. Upgrade to Pro (£99/mo) for unlimited scans, full audit reports, and MCP tool access, or Enterprise (£499/mo) for complete audit trails and dedicated support.',
+  },
+];
 
 export default function HomePage() {
   return (
-    <div className="relative">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+    <div className="bg-[#09090b] text-white min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'SafetyOf.AI',
+              url: 'https://safetyof.ai',
+              logo: 'https://safetyof.ai/logo.png',
+              description:
+                'EU AI Act compliance platform. 48-hour audits, continuous monitoring, and cryptographic attestations.',
+              sameAs: [
+                'https://github.com/safetyofai',
+                'https://linkedin.com/company/safetyofai',
+              ],
+              contactPoint: {
+                '@type': 'ContactPoint',
+                contactType: 'sales',
+                email: 'contact@safetyof.ai',
+                url: 'https://safetyof.ai/contact',
+              },
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Product',
+              name: 'SafetyOf.AI Compliance Platform',
+              description:
+                '48-hour compliance audits, continuous monitoring, and cryptographic attestations for EU AI Act, DORA, NIS2, and ISO 42001.',
+              brand: { '@type': 'Organization', name: 'SafetyOf.AI' },
+              offers: [
+                {
+                  '@type': 'Offer',
+                  price: '0',
+                  priceCurrency: 'GBP',
+                  name: 'Free Tier',
+                  description: '3 scans/day, basic risk score',
+                },
+                {
+                  '@type': 'Offer',
+                  price: '99',
+                  priceCurrency: 'GBP',
+                  name: 'Pro',
+                  description: 'Unlimited scans, audit reports, MCP tools',
+                  priceSpecification: {
+                    '@type': 'UnitPriceSpecification',
+                    price: '99',
+                    priceCurrency: 'GBP',
+                    billingDuration: 'P1M',
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  price: '499',
+                  priceCurrency: 'GBP',
+                  name: 'Enterprise',
+                  description: 'Full audit trails, custom frameworks, dedicated support',
+                  priceSpecification: {
+                    '@type': 'UnitPriceSpecification',
+                    price: '499',
+                    priceCurrency: 'GBP',
+                    billingDuration: 'P1M',
+                  },
+                },
+              ],
+            },
+          ]),
+        }}
+      />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+      {/* ─── Hero ─── */}
+      <section id="hero" className="relative overflow-hidden">
+        <div className="absolute inset-0 gradient-mesh" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#09090b]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-600/10 rounded-full blur-[128px]" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32 sm:pt-32 sm:pb-40">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm font-medium mb-8">
-              <Radio className="w-3.5 h-3.5 animate-pulse" />
-              CSOAI Security Layer — Live
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium mb-8 backdrop-blur-sm">
+              <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              <span className="text-white/70">
+                EU AI Act Deadline:{' '}
+                <span className="text-amber-400 font-semibold font-mono">August 2, 2026</span>
+              </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6">
-              <span className="text-foreground">AI Governance</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+              Prove Your AI Is Safe.
               <br />
-              <span className="bg-gradient-to-r from-brand-400 to-safety-400 bg-clip-text text-transparent">
-                Compliance Platform
+              <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                Before Regulators Ask.
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Automate AI compliance across EU AI Act, NIST AI RMF, GDPR & DORA. Powered by 12+ MCP tools, A2A agent coordination, and OpenClaw gateway.
+            <p className="text-lg sm:text-xl text-white/50 max-w-2xl mx-auto mb-10 leading-relaxed">
+              48-hour compliance audits, continuous monitoring, and cryptographic attestations for
+              EU AI Act, DORA, NIS2, and ISO 42001.{' '}
+              <span className="text-white/80 font-medium">From £5,000.</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-               <a href="/compliance" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl gradient-brand text-white font-semibold text-base hover:opacity-90 transition-opacity shadow-lg shadow-brand-500/25">
-                 <Shield className="w-5 h-5" />
-                 Start Compliance Scan
-                 <ChevronRight className="w-4 h-4" />
-               </a>
-               <a href="/regulatory" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-card border border-border text-foreground font-semibold text-base hover:bg-accent transition-colors">
-                 <Calendar className="w-5 h-5" />
-                 View Regulatory Tracker
-               </a>
+              <a
+                href="/dashboard"
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-base hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+              >
+                <Scan className="w-5 h-5" />
+                Start Free Scan
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+              <a
+                href="/pricing"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base hover:bg-white/10 transition-colors backdrop-blur-sm"
+              >
+                Book Audit
+              </a>
             </div>
 
-            <div className="flex items-center justify-center gap-8 mt-10 text-sm text-muted-foreground">
-               <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-safety-500" /> 12+ MCP tools</span>
-               <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-safety-500" /> A2A agent coordination</span>
-               <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-safety-500" /> Free tier available</span>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 mt-10 text-sm text-white/40">
+              <span className="flex items-center gap-1.5 font-mono">
+                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                218 MCP Servers
+              </span>
+              <span className="flex items-center gap-1.5 font-mono">
+                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                410 Articles Indexed
+              </span>
+              <span className="flex items-center gap-1.5 font-mono">
+                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                HMAC-SHA256 Signed
+              </span>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Live Stats Bar */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+      {/* ─── Social Proof ─── */}
+      <section id="trust" className="relative py-16 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-sm text-white/30 uppercase tracking-widest mb-8">
+            The AI governance platform
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
-              { label: 'AI Agents Online', value: '33/33', icon: Brain },
-              { label: 'Threats Blocked', value: '2.4M+', icon: AlertTriangle },
-              { label: 'Content Verified', value: '12M+', icon: Eye },
-              { label: 'Uptime', value: '99.99%', icon: Activity },
-            ].map((stat) => (
-              <div key={stat.label} className="glass rounded-xl p-4 text-center">
-                <stat.icon className="w-5 h-5 text-brand-400 mx-auto mb-2" />
-                <p className="text-xl font-bold text-foreground">{stat.value}</p>
-                <p className="text-xs text-muted-foreground">{stat.label}</p>
+              { stat: '273+', label: 'MCP Servers' },
+              { stat: '25', label: '.ai Domains' },
+              { stat: '9', label: 'Framework Coverage' },
+              { stat: '48h', label: 'Audit Turnaround' },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="flex flex-col items-center justify-center h-20 rounded-xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm"
+              >
+                <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  {item.stat}
+                </span>
+                <span className="text-xs text-white/30 mt-1">{item.label}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What SOAI Replaces — No More AI Dome */}
-      <section className="py-20 border-t border-border">
+      {/* ─── Problem Section ─── */}
+      <section id="problem" className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              One Security Layer.{' '}
-              <span className="text-brand-400">No More Fragmented Tools.</span>
+            <span className="text-xs font-mono text-red-400 uppercase tracking-widest">
+              The Compliance Gap
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-4 mb-4">
+              The Cost of Non-Compliance{' '}
+              <span className="text-red-400">Is Existential</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              SafetyOf.AI replaces siloed AI safety tools with a unified security layer built directly into the CSOAI governance stack. Byzantine fault-tolerant by design.
+            <p className="text-white/40 max-w-xl mx-auto">
+              The EU AI Act enforcement date is approaching. Organizations without compliant AI
+              systems face severe penalties.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                icon: Brain,
-                title: 'Multi-AI Consensus Engine',
-                description: 'Every query verified by 4-33 independent AI models simultaneously. Majority voting with confidence weighting ensures no single point of failure.',
-                features: ['OpenAI GPT-4', 'Anthropic Claude', 'Google Gemini', 'Deepseek V3'],
-                accent: 'brand',
+                icon: CreditCard,
+                stat: '€35M',
+                title: 'Maximum fines for non-compliance',
+                desc: 'Or 7% of global annual turnover — whichever is higher. The steepest regulatory penalty outside GDPR.',
+                color: 'red',
               },
               {
-                icon: Globe,
-                title: 'Real-Time Threat Intelligence',
-                description: 'Aggregated feeds from PhishTank, URLhaus, OpenPhish, and AlienVault OTX. 24-hour cache with live updates covering millions of known threats.',
-                features: ['URL Scanning', 'Phishing Detection', 'Malware Feeds', 'Domain Analysis'],
-                accent: 'safety',
+                icon: Clock,
+                stat: '80 days',
+                title: 'Until the deadline',
+                desc: 'August 2, 2026 marks the end of the transition period. High-risk AI systems must be compliant on day one.',
+                color: 'amber',
               },
               {
-                icon: Shield,
-                title: 'Byzantine Council Integration',
-                description: 'Powered by CSOAI\'s 33-agent Byzantine Council across 6 continents. Every safety decision is fault-tolerant and geographically distributed.',
-                features: ['33 AI Agents', '6 Continents', '3 Architecture Families', '99.99% Uptime'],
-                accent: 'brand',
+                icon: AlertTriangle,
+                stat: '6+ months',
+                title: 'Manual audits take forever',
+                desc: 'Traditional compliance consultancies charge £50k+ and deliver in 6-12 months. You don\'t have that time.',
+                color: 'orange',
               },
             ].map((card) => (
-              <div key={card.title} className="group relative rounded-2xl bg-card border border-border p-8 hover:border-brand-500/30 transition-all duration-300">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${card.accent === 'brand' ? 'bg-brand-500/10 text-brand-400' : 'bg-safety-500/10 text-safety-400'}`}>
-                  <card.icon className="w-6 h-6" />
+              <div
+                key={card.title}
+                className="group relative rounded-2xl bg-white/[0.03] border border-white/[0.06] p-8 hover:border-white/10 transition-all duration-300 backdrop-blur-sm"
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <div
+                    className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                      card.color === 'red'
+                        ? 'bg-red-500/10 text-red-400'
+                        : card.color === 'amber'
+                          ? 'bg-amber-500/10 text-amber-400'
+                          : 'bg-orange-500/10 text-orange-400'
+                    }`}
+                  >
+                    <card.icon className="w-5 h-5" />
+                  </div>
+                  <span
+                    className={`text-2xl font-bold font-mono ${
+                      card.color === 'red'
+                        ? 'text-red-400'
+                        : card.color === 'amber'
+                          ? 'text-amber-400'
+                          : 'text-orange-400'
+                    }`}
+                  >
+                    {card.stat}
+                  </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
-                <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{card.description}</p>
-                <div className="space-y-2">
-                  {card.features.map((f) => (
-                    <div key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-safety-500 flex-shrink-0" />
-                      {f}
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
+                <p className="text-sm text-white/40 leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 bg-card border-t border-border">
+      {/* ─── Solution: How It Works ─── */}
+      <section id="how-it-works" className="relative py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              How SafetyOf.AI{' '}
-              <span className="text-safety-400">Protects You</span>
+            <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">
+              How SafetyOf.AI Works
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-4">
+              From Scan to Attestation{' '}
+              <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                in 48 Hours
+              </span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-5 gap-4">
+          <div className="relative grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Connection lines (desktop only) */}
+            <div className="hidden md:block absolute top-16 left-[calc(33.33%-8px)] w-[calc(33.33%+16px)] h-px">
+              <div className="w-full h-full bg-gradient-to-r from-blue-500/50 to-cyan-500/50 animate-pulse" />
+            </div>
+            <div className="hidden md:block absolute top-16 left-[calc(66.66%-8px)] w-[calc(33.33%+16px)] h-px">
+              <div className="w-full h-full bg-gradient-to-r from-cyan-500/50 to-blue-500/50 animate-pulse" />
+            </div>
+
             {[
-              { step: '01', title: 'Submit', desc: 'Text, URL, image, audio, or video', icon: Zap },
-              { step: '02', title: 'Distribute', desc: 'Query sent to 4-33 AI models simultaneously', icon: Globe },
-              { step: '03', title: 'Analyze', desc: 'Each model independently assesses the content', icon: Brain },
-              { step: '04', title: 'Consensus', desc: 'Byzantine voting determines the verdict', icon: Users },
-              { step: '05', title: 'Protect', desc: 'Real-time result with confidence score', icon: Shield },
+              {
+                step: '01',
+                icon: Scan,
+                title: 'Scan',
+                desc: 'Connect your AI systems via our MCP servers or upload documentation. We classify risk under Article 6 and Annex III automatically.',
+              },
+              {
+                step: '02',
+                icon: FileText,
+                title: 'Audit',
+                desc: 'Run a 42-point compliance check across Articles 9-15. Generate Annex IV documentation and identify every gap with remediation guidance.',
+              },
+              {
+                step: '03',
+                icon: Shield,
+                title: 'Monitor',
+                desc: 'Continuous compliance monitoring with HMAC-SHA256 signed attestations. Get alerted before drift becomes a violation.',
+              },
             ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-14 h-14 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mx-auto mb-3">
-                  <item.icon className="w-6 h-6" />
+              <div key={item.step} className="relative text-center">
+                <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600/20 to-cyan-500/20 border border-blue-500/20 flex items-center justify-center mx-auto mb-5">
+                  <item.icon className="w-7 h-7 text-cyan-400" />
                 </div>
-                <span className="text-xs font-mono text-brand-400">STEP {item.step}</span>
-                <h4 className="font-semibold mt-1 mb-1">{item.title}</h4>
-                <p className="text-xs text-muted-foreground">{item.desc}</p>
+                <span className="text-xs font-mono text-blue-400 tracking-wider">
+                  STEP {item.step}
+                </span>
+                <h3 className="text-xl font-bold mt-2 mb-3">{item.title}</h3>
+                <p className="text-sm text-white/40 leading-relaxed max-w-xs mx-auto">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Security Features Grid */}
-      <section className="py-20 border-t border-border">
+      {/* ─── Features Grid ─── */}
+      <section id="features" className="relative py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Complete Security{' '}
-              <span className="text-brand-400">For the AI Era</span>
+            <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">
+              Platform Capabilities
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-4 mb-4">
+              Everything You Need to{' '}
+              <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                Stay Compliant
+              </span>
             </h2>
+            <p className="text-white/40 max-w-xl mx-auto">
+              Purpose-built for the EU AI Act. Covers every article, every annex, every
+              requirement.
+            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: Eye, title: 'Deepfake Detection', desc: 'AI-generated image, video, and audio detection with multi-model consensus verification.' },
-              { icon: Scan, title: 'URL Scanner', desc: 'Real-time scanning against 4 threat intelligence databases plus multi-AI analysis.' },
-              { icon: Lock, title: 'Prompt Injection Shield', desc: 'Real-time detection and blocking of direct and indirect prompt injection attacks at the inference layer.' },
-              { icon: BarChart3, title: 'Model Security Leaderboard', desc: 'Independent security rankings for LLMs — injection resistance, data leakage, agentic robustness scores.' },
-              { icon: Cpu, title: 'Runtime Defense', desc: 'Inference-layer security monitoring every AI request in real-time with sub-25ms latency overhead.' },
-              { icon: FileSearch, title: 'Supply Chain Security', desc: 'Scan model artifacts for serialization exploits, malware, and dependency vulnerabilities before deployment.' },
-              { icon: Database, title: 'AI Bill of Materials', desc: 'Auto-generated AIBOM for every model — auditable inventory of components, datasets, and dependencies.' },
-              { icon: Activity, title: 'Security Dashboard', desc: 'Real-time monitoring, threat feeds, security score, and scan history in one unified view.' },
-              { icon: Users, title: 'PII Auto-Redaction', desc: 'Automatically detect and scrub SSN, credit cards, emails, and phone numbers before they reach the model.' },
+              {
+                icon: AlertTriangle,
+                title: 'AI Risk Classification',
+                desc: 'Automated classification under Article 6 and Annex III. Identify whether your AI systems are prohibited, high-risk, limited, or minimal risk.',
+                tag: 'Art. 6 / Annex III',
+              },
+              {
+                icon: CheckCircle2,
+                title: '42-Point Compliance Check',
+                desc: 'Systematic verification across Articles 9-15 covering risk management, data governance, transparency, human oversight, and accuracy.',
+                tag: 'Art. 9-15',
+              },
+              {
+                icon: FileText,
+                title: 'Annex IV Documentation',
+                desc: 'Auto-generated technical documentation that meets Annex IV requirements. Purpose, design, testing data, and risk mitigations — all formatted for regulators.',
+                tag: 'Annex IV',
+              },
+              {
+                icon: Lock,
+                title: 'HMAC-SHA256 Attestations',
+                desc: 'Every compliance artifact is cryptographically signed. Tamper-evident records that regulators and auditors can independently verify.',
+                tag: 'Cryptographic',
+              },
+              {
+                icon: Server,
+                title: '218 MCP Servers',
+                desc: 'Automated compliance infrastructure connecting directly to your AI stack. Continuous evidence collection without manual intervention.',
+                tag: 'Automation',
+              },
+              {
+                icon: Globe,
+                title: 'Multi-Framework Coverage',
+                desc: 'EU AI Act, DORA, NIS2, ISO 42001, and GDPR — mapped and cross-referenced. One compliance engine, five frameworks, zero duplicate work.',
+                tag: '5 Frameworks',
+              },
             ].map((feature) => (
-              <div key={feature.title} className="rounded-xl bg-card border border-border p-6 hover:border-brand-500/20 transition-colors">
-                <feature.icon className="w-5 h-5 text-brand-400 mb-3" />
+              <div
+                key={feature.title}
+                className="group relative rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 hover:border-blue-500/20 transition-all duration-300 backdrop-blur-sm"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                    <feature.icon className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <span className="text-[10px] font-mono text-cyan-400/60 bg-cyan-400/5 px-2 py-1 rounded-full">
+                    {feature.tag}
+                  </span>
+                </div>
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
+                <p className="text-sm text-white/40 leading-relaxed">{feature.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CSOAI Stack Integration */}
-      <section className="py-20 bg-card border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-xs font-mono text-brand-400 uppercase tracking-wider">CSOAI Stack Integration</span>
-              <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-6">
-                Built Into the{' '}
-                <span className="text-brand-400">Governance Stack</span>
-              </h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                SafetyOf.AI isn&apos;t a standalone tool — it&apos;s the security layer woven directly into the CSOAI governance framework. Every compliance check, every analyst review, every certification is backed by multi-AI consensus verification.
-              </p>
-              <div className="space-y-4">
-                {[
-                  'CASA intelligence layer ingests AI telemetry from 40+ nation sources',
-                  'Research-aligned assessment: ASIMOV-style ethical, SABER-style red-team, AIQ-style guarantees',
-                  'DARB-aligned certification with multi-signature Ed25519, IPFS, blockchain anchoring',
-                  'Zero-trust architecture with cell-level security',
-                  'Responsible AI principles aligned with NATO PRU framework',
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-safety-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-muted-foreground">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="rounded-2xl bg-background border border-border p-6 space-y-4">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-3 h-3 rounded-full bg-safety-500 animate-pulse" />
-                  <span className="text-sm font-mono text-safety-400">CSOAI Stack — All Systems Operational</span>
-                </div>
-                {[
-                  { name: 'CASA', role: 'Intelligence & Analytics', status: 'Active' },
-                  { name: 'SOAI + POAI', role: 'Certification Platform', status: 'Active' },
-                  { name: 'AI3 Council', role: '33 Assessment Agents', status: 'Online' },
-                  { name: 'DSRB Pipeline', role: '40-Nation Distribution', status: 'Active' },
-                  { name: 'CSOAI Platform', role: 'Governance & Licensing', status: 'Active' },
-                  { name: 'CEASAI Training', role: '20-Week Analyst Cert', status: 'Active' },
-                ].map((svc) => (
-                  <div key={svc.name} className="flex items-center justify-between py-2.5 px-3 rounded-lg bg-card border border-border">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-safety-500" />
-                      <div>
-                        <p className="text-sm font-medium">{svc.name}</p>
-                        <p className="text-xs text-muted-foreground">{svc.role}</p>
-                      </div>
-                    </div>
-                    <span className="text-xs font-mono text-safety-400">{svc.status}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why SafetyOf.AI */}
-      <section className="py-20 border-t border-border">
+      {/* ─── Pricing ─── */}
+      <section id="pricing" className="relative py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Why Organizations Choose{' '}
-              <span className="text-brand-400">SafetyOf.AI</span>
+            <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">
+              Pricing
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-4 mb-4">
+              Start Free.{' '}
+              <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                Scale When Ready.
+              </span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              End-to-end AI security combining runtime defense, supply chain scanning, model evaluation, and governance — all in one platform.
+            <p className="text-white/40 max-w-xl mx-auto">
+              No credit card required for the free tier. Upgrade anytime.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { value: '12,943', label: 'Security Tests / Week', sub: 'Automated red-teaming' },
-              { value: '<25ms', label: 'Scan Latency', sub: 'Near-zero overhead' },
-              { value: '12+', label: 'Models Ranked', sub: 'Security leaderboard' },
-              { value: '8', label: 'Attack Vectors', sub: 'Continuously updated' },
-            ].map((stat) => (
-              <div key={stat.label} className="rounded-xl bg-card border border-border p-6 text-center">
-                <p className="text-3xl font-bold text-brand-400">{stat.value}</p>
-                <p className="text-sm font-medium mt-1">{stat.label}</p>
-                <p className="text-xs text-muted-foreground mt-1">{stat.sub}</p>
+              {
+                name: 'Free',
+                price: '£0',
+                period: '',
+                desc: 'For individuals exploring AI compliance.',
+                features: [
+                  '3 compliance scans / day',
+                  'Basic risk score',
+                  'Article 6 classification',
+                  'Community support',
+                ],
+                cta: 'Start Scanning',
+                popular: false,
+              },
+              {
+                name: 'Pro',
+                price: '£99',
+                period: '/mo',
+                desc: 'For teams building compliant AI products.',
+                features: [
+                  'Unlimited compliance scans',
+                  'Full audit reports (Art. 9-15)',
+                  'Annex IV documentation generator',
+                  '218 MCP server access',
+                  'HMAC-SHA256 attestations',
+                  'Priority support',
+                ],
+                cta: 'Start Free Trial',
+                popular: true,
+              },
+              {
+                name: 'Enterprise',
+                price: '£499',
+                period: '/mo',
+                desc: 'For organizations with complex compliance needs.',
+                features: [
+                  'Everything in Pro',
+                  'Full audit trails & evidence packs',
+                  'Custom framework mapping',
+                  'DORA + NIS2 + ISO 42001 + GDPR',
+                  'Dedicated compliance engineer',
+                  'SSO & RBAC',
+                  'SLA-backed uptime',
+                ],
+                cta: 'Contact Sales',
+                popular: false,
+              },
+            ].map((tier) => (
+              <div
+                key={tier.name}
+                className={`relative rounded-2xl p-8 backdrop-blur-sm ${
+                  tier.popular
+                    ? 'bg-gradient-to-b from-blue-600/10 to-cyan-500/5 border-2 border-blue-500/30 shadow-lg shadow-blue-500/10'
+                    : 'bg-white/[0.03] border border-white/[0.06]'
+                }`}
+              >
+                {tier.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-bold px-4 py-1 rounded-full">
+                      MOST POPULAR
+                    </span>
+                  </div>
+                )}
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold">{tier.name}</h3>
+                  <p className="text-xs text-white/30 mt-1">{tier.desc}</p>
+                </div>
+                <div className="mb-8">
+                  <span className="text-4xl font-bold">{tier.price}</span>
+                  {tier.period && (
+                    <span className="text-white/30 text-sm ml-1">{tier.period}</span>
+                  )}
+                </div>
+                <ul className="space-y-3 mb-8">
+                  {tier.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-white/60">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={tier.name === 'Enterprise' ? '/contact' : '/dashboard'}
+                  className={`block w-full text-center py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                    tier.popular
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:shadow-lg hover:shadow-blue-500/25'
+                      : 'bg-white/5 border border-white/10 text-white hover:bg-white/10'
+                  }`}
+                >
+                  {tier.cta}
+                </a>
               </div>
             ))}
-          </div>
-
-          {/* Compliance Frameworks */}
-          <div className="rounded-2xl bg-card border border-border p-8">
-            <h3 className="text-lg font-semibold mb-6 text-center">Aligned with Leading Security Frameworks</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {[
-                { name: 'NIST AI RMF', desc: 'Risk Management' },
-                { name: 'MITRE ATLAS', desc: 'Adversarial Threats' },
-                { name: 'OWASP LLM Top 10', desc: 'LLM Vulnerabilities' },
-                { name: 'ISO 42001', desc: 'AI Management' },
-                { name: 'EU AI Act', desc: 'EU Compliance' },
-                { name: 'DARB Standards', desc: 'Defense Certification' },
-              ].map((fw) => (
-                <div key={fw.name} className="text-center p-3 rounded-lg bg-background border border-border">
-                  <p className="text-xs font-semibold text-brand-400">{fw.name}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{fw.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 border-t border-border">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Start Protecting Your AI Ecosystem
+      <CountdownSection />
+
+      <FAQSection faqs={faqs} />
+
+      {/* ─── Final CTA ─── */}
+      <section id="cta" className="relative py-24 border-t border-white/5">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            Ready to prove your
+            <br />
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+              AI is safe?
+            </span>
           </h2>
-          <p className="text-muted-foreground mb-8">
-            3 free scans per day. No credit card required. Upgrade to Pro for unlimited access.
+          <p className="text-white/40 text-lg mb-10 max-w-lg mx-auto">
+            3 free scans per day. No credit card required. Results in seconds.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/dashboard" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl gradient-brand text-white font-semibold hover:opacity-90 transition-opacity">
-              Get Started Free
-              <ChevronRight className="w-4 h-4" />
+            <a
+              href="/dashboard"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-base hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+            >
+              Start Free Scan
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
-            <a href="/pricing" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-border font-semibold hover:bg-accent transition-colors">
-              View Pricing
+            <a
+              href="/pricing"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base hover:bg-white/10 transition-colors backdrop-blur-sm"
+            >
+              Book Audit
             </a>
           </div>
         </div>
