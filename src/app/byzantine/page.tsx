@@ -3,6 +3,12 @@
 import { useState, useEffect } from 'react';
 import { Brain, Globe, Shield, Activity, CheckCircle2, Radio, Cpu, Network, Zap, Server } from 'lucide-react';
 
+// Seeded PRNG for SSR/client hydration consistency
+function seededRandom(seed: number) {
+  const x = Math.sin(seed * 9301 + 49297) * 49297;
+  return x - Math.floor(x);
+}
+
 interface Agent {
   id: string;
   name: string;
@@ -25,10 +31,10 @@ const AGENTS: Agent[] = [
     familyLabel: 'Transformer',
     region: ['US-East', 'US-West', 'EU-West', 'EU-Central', 'AP-Southeast', 'AP-Northeast', 'SA-East', 'AF-South', 'ME-Central', 'CA-Central', 'UK-South'][i],
     status: 'online' as const,
-    uptime: 99.9 + Math.random() * 0.09,
-    lastVerification: `${Math.floor(Math.random() * 10) + 1}s ago`,
-    verificationsToday: Math.floor(Math.random() * 5000) + 1000,
-    consensusAccuracy: 95 + Math.random() * 4.5,
+    uptime: 99.9 + seededRandom(i * 7 + 1) * 0.09,
+    lastVerification: `${Math.floor(seededRandom(i * 7 + 2) * 10) + 1}s ago`,
+    verificationsToday: Math.floor(seededRandom(i * 7 + 3) * 5000) + 1000,
+    consensusAccuracy: 95 + seededRandom(i * 7 + 4) * 4.5,
   })),
   // Family B — Alternative Architectures
   ...['RNN-Safety', 'CNN-Visual', 'GNN-Network', 'Mamba-SSM', 'RWKV-7B', 'RetNet-13B', 'Hyena-7B', 'StripedHyena', 'Griffin-7B', 'xLSTM-Safety', 'KAN-Verify'].map((name, i) => ({
@@ -38,10 +44,10 @@ const AGENTS: Agent[] = [
     familyLabel: 'Alternative',
     region: ['US-East', 'US-West', 'EU-West', 'EU-Central', 'AP-Southeast', 'AP-Northeast', 'SA-East', 'AF-South', 'ME-Central', 'CA-Central', 'UK-South'][i],
     status: (i === 7 ? 'degraded' : 'online') as 'online' | 'degraded',
-    uptime: 99.5 + Math.random() * 0.4,
-    lastVerification: `${Math.floor(Math.random() * 15) + 1}s ago`,
-    verificationsToday: Math.floor(Math.random() * 3000) + 800,
-    consensusAccuracy: 93 + Math.random() * 5,
+    uptime: 99.5 + seededRandom(i * 7 + 1) * 0.4,
+    lastVerification: `${Math.floor(seededRandom(i * 7 + 2) * 15) + 1}s ago`,
+    verificationsToday: Math.floor(seededRandom(i * 7 + 3) * 3000) + 800,
+    consensusAccuracy: 93 + seededRandom(i * 7 + 4) * 5,
   })),
   // Family C — Symbolic/Hybrid
   ...['ProverBot', 'LEAN-Safety', 'Symbolic-Logic-Engine', 'Neuro-Symbolic-7', 'Bayesian-Safety', 'Causal-AI', 'Knowledge-Graph-V', 'Rule-Engine-Pro', 'Constraint-Solver', 'Formal-Methods-AI', 'Hybrid-Reason'].map((name, i) => ({
@@ -51,10 +57,10 @@ const AGENTS: Agent[] = [
     familyLabel: 'Symbolic',
     region: ['US-East', 'US-West', 'EU-West', 'EU-Central', 'AP-Southeast', 'AP-Northeast', 'SA-East', 'AF-South', 'ME-Central', 'CA-Central', 'UK-South'][i],
     status: 'online' as const,
-    uptime: 99.7 + Math.random() * 0.25,
-    lastVerification: `${Math.floor(Math.random() * 20) + 1}s ago`,
-    verificationsToday: Math.floor(Math.random() * 2000) + 500,
-    consensusAccuracy: 94 + Math.random() * 5,
+    uptime: 99.7 + seededRandom(i * 7 + 1) * 0.25,
+    lastVerification: `${Math.floor(seededRandom(i * 7 + 2) * 20) + 1}s ago`,
+    verificationsToday: Math.floor(seededRandom(i * 7 + 3) * 2000) + 500,
+    consensusAccuracy: 94 + seededRandom(i * 7 + 4) * 5,
   })),
 ];
 
