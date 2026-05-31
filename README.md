@@ -1,121 +1,78 @@
-# SafetyOf.AI — The Security Layer for CSOAI
+# Safetyofai
 
-Multi-AI consensus security platform. Real-time threat detection, Byzantine Council verification, and AI safety compliance — the security layer powering the Council for the Safety of AI.
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK-AI%20Labs-667eea)](https://meok.ai)
+[![EU AI Act](https://img.shields.io/badge/EU%20AI%20Act-Compliant-22c55e)](https://councilof.ai)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PyPI](https://img.shields.io/badge/PyPI-Install-3775a9)](https://pypi.org/project/safetyofai/)
 
-## Stack
+> SafetyOf
 
-- **Framework**: Next.js 14 (App Router) + TypeScript
-- **Styling**: Tailwind CSS with custom design system
-- **Deployment**: Vercel (optimized)
-- **AI Models**: OpenAI GPT-4, Anthropic Claude 3.5, Google Gemini 2.0, Deepseek V3
-- **Threat Intel**: PhishTank, URLhaus, OpenPhish, AlienVault OTX
+SafetyOf.AI — The Security Layer for CSOAI. Multi-AI consensus security platform with runtime defense, model leaderboard, and supply chain security.
 
-## Features
+---
 
-- **Multi-AI Consensus Engine** — Queries 4-33 AI models simultaneously with Byzantine voting
-- **URL Security Scanner** — Real-time scanning against 4 threat intelligence databases
-- **Byzantine Council Dashboard** — 33 agents across 3 architecture families, 6 continents
-- **Threat Intelligence Feed** — Live aggregated threat data with auto-refresh
-- **Security Dashboard** — Scans, scores, history, and threat monitoring
-- **Stripe Billing** — Free (3/day), Pro ($9/mo), Expert ($29/mo), Enterprise tiers
-
-## Getting Started
+## 🚀 Quick Start
 
 ```bash
-# Install dependencies
-npm install
+# Install via pip
+pip install safetyofai
 
-# Copy environment variables
-cp .env.example .env.local
-
-# Add your API keys to .env.local
-
-# Run development server
-npm run dev
+# Or install via Smithery
+npx -y @smithery/cli@latest install safetyofai --client claude
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## ✨ Features
 
-## Deploy to Vercel
+- Real-time AI safety monitoring
+- Byzantine fault-tolerant consensus
+- EU AI Act compliance tracking
+- Incident alert system
+- Multi-agent governance
 
-1. Push to GitHub
-2. Import in Vercel (vercel.com/new)
-3. Add environment variables in Vercel dashboard
-4. Deploy
+## 📖 Documentation
 
-The `vercel.json` is already configured with security headers and multi-region deployment.
+- [Full Documentation](https://docs.meok.ai/safetyofai)
+- [API Reference](https://api.meok.ai)
+- [EU AI Act Compliance Guide](https://councilof.ai/compliance)
 
-## API Routes
+## 🛡️ Compliance
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/consensus` | POST | Multi-AI consensus verification |
-| `/api/scan` | POST | URL security scanning |
-| `/api/threats` | GET | Threat intelligence feed |
-| `/api/threats` | POST | Report a new threat |
-| `/api/auth` | POST | Authentication (login/signup) |
-| `/api/webhook` | POST | Stripe webhook handler |
-| `/api/health` | GET | System health check |
+This MCP server is built with **EU AI Act compliance** built-in:
 
-## Environment Variables
+- ✅ Article 9 — Risk Management System
+- ✅ Article 13 — Transparency & Instructions for Use
+- ✅ Article 15 — Bias Detection & Testing
+- ✅ Article 26 — FRIA Support (where applicable)
+- ✅ Article 50 — AI Content Watermarking (where applicable)
 
-See `.env.example` for all required variables. At minimum:
+Need help getting compliant? **[Book a free 15-min diagnostic →](https://cal.com/csoai/august-audit)**
 
-- `OPENAI_API_KEY` — GPT-4 access
-- `ANTHROPIC_API_KEY` — Claude access
-- `GOOGLE_GEMINI_API_KEY` — Gemini access
-- `STRIPE_SECRET_KEY` — Payment processing
+## 🏢 Enterprise
 
-The app works with graceful fallbacks when API keys aren't configured.
+Need custom development, SLA guarantees, or white-label deployment?
 
-## Testing
+- **Pro:** $99/mo — Full MCP suite + EU AI Act tracking
+- **Enterprise:** $499/mo — Custom dev + SLA + Dedicated support
 
-Full E2E coverage with both **Playwright** (multi-browser) and **Cypress**.
+[View Pricing →](https://councilof.ai/pricing) | [Contact Sales →](mailto:sales@csoai.org)
 
-```bash
-# Playwright — all browsers
-npx playwright install --with-deps
-npm run test:pw
+## 🤝 Part of the MEOK Ecosystem
 
-# Playwright — headed mode (visible browser)
-npm run test:pw:headed
+This server is part of the **[MEOK AI Labs](https://meok.ai)** ecosystem — 300+ MCP servers for sovereign AI governance.
 
-# Cypress — headless
-npm run test:cy
+| Domain | Purpose |
+|--------|---------|
+| [councilof.ai](https://councilof.ai) | EU AI Act compliance marketplace |
+| [safetyof.ai](https://safetyof.ai) | AI safety & monitoring |
+| [meok.ai](https://meok.ai) | Sovereign AI platform |
+| [cobolbridge.ai](https://cobolbridge.ai) | Legacy modernization |
 
-# Cypress — interactive GUI
-npm run test:cy:open
+## 📜 License
 
-# Run both suites
-npm run test:e2e
+MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
 
-# CI build + test (used by GitHub Actions)
-npm run test:ci
-```
+---
 
-**Playwright specs** (9 files, ~100 tests): landing, navigation, dashboard, scanner, threat-intel, byzantine, pricing, about, API routes — runs across Chromium, Firefox, WebKit, and mobile viewports.
-
-**Cypress specs** (6 files, ~60 tests): pages, dashboard, scanner, byzantine, API routes, pricing — with custom commands for scan workflows.
-
-**GitHub Actions** CI runs automatically on push/PR to `main` with Playwright, Cypress, lint, type-check, and build steps.
-
-## CSOAI Stack Position
-
-```
-CSOAI Platform ─── Governance, Licensing, Compliance
-    │
-    ├── SafetyOf.AI ◀── YOU ARE HERE
-    │   └── Multi-AI Consensus + Threat Intel + Byzantine Verification
-    │
-    ├── CEASAI Training ─── 20-Week Analyst Certification
-    │
-    ├── Byzantine Council ─── 33 AI Agents, 6 Continents
-    │
-    ├── Prosperity Fund ─── AI Wealth-Sharing
-    │
-    └── Watchdog System ─── Public Oversight
-```
-
-## License
-
-Proprietary — Council for the Safety of AI Ltd.
+<p align="center">
+  <sub>Built with 💜 by <a href="https://meok.ai">MEOK AI Labs</a> · UK Companies House 16939677</sub>
+</p>
