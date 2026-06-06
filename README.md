@@ -12,12 +12,12 @@ Multi-AI consensus security platform. Real-time threat detection, Byzantine Coun
 
 ## Features
 
-- **Multi-AI Consensus Engine** — Queries 4-33 AI models simultaneously with Byzantine voting
+- **Multi-AI Consensus Engine** — Queries multiple AI models simultaneously with Byzantine voting
 - **URL Security Scanner** — Real-time scanning against 4 threat intelligence databases
-- **Byzantine Council Dashboard** — 33 agents across 3 architecture families, 6 continents
+- **Byzantine Council Dashboard** — Multiple agents across architecture families
 - **Threat Intelligence Feed** — Live aggregated threat data with auto-refresh
 - **Security Dashboard** — Scans, scores, history, and threat monitoring
-- **Stripe Billing** — Free (3/day), Pro ($9/mo), Expert ($29/mo), Enterprise tiers
+- **Stripe Billing** — Free, Pro, Expert, and Enterprise tiers
 
 ## Getting Started
 

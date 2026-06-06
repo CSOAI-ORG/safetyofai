@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'What are MCP servers and how do they help with compliance?',
-    a: 'MCP (Model Context Protocol) servers are standardized interfaces that connect AI systems to compliance tooling. Our 218 MCP servers automate evidence collection, policy enforcement, and monitoring across your AI stack. They continuously gather compliance data from your systems without manual intervention.',
+    a: 'MCP (Model Context Protocol) servers are standardized interfaces that connect AI systems to compliance tooling. Our MCP server ecosystem automates evidence collection, policy enforcement, and monitoring across your AI stack. They continuously gather compliance data from your systems without manual intervention.',
   },
   {
     q: 'Can I try SafetyOf.AI before committing to a paid plan?',
@@ -172,7 +172,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 mt-10 text-sm text-white/40">
               <span className="flex items-center gap-1.5 font-mono">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                218 MCP Servers
+                Open MCP Ecosystem
               </span>
               <span className="flex items-center gap-1.5 font-mono">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
@@ -195,7 +195,7 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
-              { stat: '273+', label: 'MCP Servers' },
+              { stat: 'Open', label: 'MCP Ecosystem' },
               { stat: '25', label: '.ai Domains' },
               { stat: '9', label: 'Framework Coverage' },
               { stat: '48h', label: 'Audit Turnaround' },
@@ -399,7 +399,7 @@ export default function HomePage() {
               },
               {
                 icon: Server,
-                title: '218 MCP Servers',
+                title: "Open MCP Ecosystem",
                 desc: 'Automated compliance infrastructure connecting directly to your AI stack. Continuous evidence collection without manual intervention.',
                 tag: 'Automation',
               },
@@ -473,7 +473,7 @@ export default function HomePage() {
                   'Unlimited compliance scans',
                   'Full audit reports (Art. 9-15)',
                   'Annex IV documentation generator',
-                  '218 MCP server access',
+                  'MCP server access',
                   'HMAC-SHA256 attestations',
                   'Priority support',
                 ],

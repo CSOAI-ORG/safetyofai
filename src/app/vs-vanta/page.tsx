@@ -43,7 +43,7 @@ const COMPARISON_FEATURES = [
   {
     category: 'Automation & Integration',
     features: [
-      { name: 'MCP Servers for automated compliance', soai: true, vanta: false, note: '218 MCP servers for programmatic compliance' },
+      { name: 'MCP Servers for automated compliance', soai: true, vanta: false, note: 'MCP ecosystem for programmatic compliance' },
       { name: 'HMAC-signed attestations', soai: true, vanta: false, note: 'Cryptographic proof of compliance' },
       { name: 'A2A agent coordination', soai: true, vanta: false, note: 'Multi-agent compliance workflows' },
       { name: 'API integrations', soai: true, vanta: true, note: 'Both offer API access' },
@@ -221,8 +221,8 @@ export default function VsVantaPage() {
               },
               {
                 icon: Server,
-                title: '218 MCP Servers',
-                description: 'SafetyOf.AI provides 218 MCP (Model Context Protocol) servers for automated compliance — enabling programmatic, AI-native compliance workflows. Vanta has no MCP ecosystem.',
+                title: 'Open MCP Ecosystem',
+                description: 'SafetyOf.AI provides an MCP server ecosystem for automated compliance — enabling programmatic, AI-native compliance workflows. Vanta has no MCP ecosystem.',
                 accent: 'brand',
               },
               {

@@ -560,7 +560,7 @@ export default function OnboardingPage() {
             <h2 className="text-2xl font-bold text-white mb-3">Start your full compliance scan</h2>
             <p className="text-white/80 mb-6 max-w-lg mx-auto">
               Get a comprehensive audit with technical documentation, risk management framework, and conformity
-              assessment preparation — powered by our 218 MCP server network.
+              assessment preparation — powered by our MCP server ecosystem.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a

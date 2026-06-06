@@ -19,12 +19,12 @@ import {
 type Status = 'operational' | 'degraded' | 'outage';
 
 const COMPONENTS = [
-  { name: 'API', endpoint: 'safetyof.ai/api', status: 'operational' as Status, icon: Server, uptime: '99.99%' },
-  { name: 'MCP Servers', endpoint: '218 servers', status: 'operational' as Status, icon: Activity, uptime: '99.98%' },
-  { name: 'Compliance Scanner', endpoint: 'safetyof.ai/scanner', status: 'operational' as Status, icon: Shield, uptime: '99.97%' },
-  { name: 'Dashboard', endpoint: 'safetyof.ai/dashboard', status: 'operational' as Status, icon: LayoutDashboard, uptime: '99.99%' },
-  { name: 'Payment Processing', endpoint: 'Stripe', status: 'operational' as Status, icon: CreditCard, uptime: '100%' },
-  { name: 'Email Delivery', endpoint: 'Transactional email', status: 'operational' as Status, icon: Mail, uptime: '99.95%' },
+  { name: 'API', endpoint: 'safetyof.ai/api', status: 'operational' as Status, icon: Server, uptime: '99.99% (target)' },
+  { name: 'MCP Servers', endpoint: 'MCP ecosystem', status: 'operational' as Status, icon: Activity, uptime: '99.98% (target)' },
+  { name: 'Compliance Scanner', endpoint: 'safetyof.ai/scanner', status: 'operational' as Status, icon: Shield, uptime: '99.97% (target)' },
+  { name: 'Dashboard', endpoint: 'safetyof.ai/dashboard', status: 'operational' as Status, icon: LayoutDashboard, uptime: '99.99% (target)' },
+  { name: 'Payment Processing', endpoint: 'Stripe', status: 'operational' as Status, icon: CreditCard, uptime: '100% (target)' },
+  { name: 'Email Delivery', endpoint: 'Transactional email', status: 'operational' as Status, icon: Mail, uptime: '99.95% (target)' },
 ];
 
 function generateUptimeHistory(): { day: number; status: Status }[] {

@@ -5,12 +5,12 @@ import { useState } from 'react';
 type SortKey = 'rank' | 'casi' | 'awr' | 'injection' | 'leakage' | 'overall';
 
 const models = [
-  { rank: 1, name: 'Claude 4 Sonnet', provider: 'Anthropic', casi: 95.1, awr: 93.8, injection: 97.2, leakage: 94.5, overall: 95.2, trend: '+2.1', badge: 'gold' },
-  { rank: 2, name: 'GPT-5', provider: 'OpenAI', casi: 93.4, awr: 91.2, injection: 95.8, leakage: 92.1, overall: 93.1, trend: '+4.3', badge: 'gold' },
-  { rank: 3, name: 'GPT-5 Nano', provider: 'OpenAI', casi: 91.8, awr: 90.5, injection: 94.1, leakage: 90.8, overall: 91.8, trend: '+1.8', badge: 'gold' },
-  { rank: 4, name: 'Gemini 2.5 Pro', provider: 'Google', casi: 90.2, awr: 88.7, injection: 92.4, leakage: 89.3, overall: 90.2, trend: '+3.1', badge: 'silver' },
+  { rank: 1, name: 'Claude 3.5 Sonnet', provider: 'Anthropic', casi: 95.1, awr: 93.8, injection: 97.2, leakage: 94.5, overall: 95.2, trend: '+2.1', badge: 'gold' },
+  { rank: 2, name: 'GPT-4o', provider: 'OpenAI', casi: 93.4, awr: 91.2, injection: 95.8, leakage: 92.1, overall: 93.1, trend: '+4.3', badge: 'gold' },
+  { rank: 3, name: 'GPT-4o mini', provider: 'OpenAI', casi: 91.8, awr: 90.5, injection: 94.1, leakage: 90.8, overall: 91.8, trend: '+1.8', badge: 'gold' },
+  { rank: 4, name: 'Gemini 1.5 Pro', provider: 'Google', casi: 90.2, awr: 88.7, injection: 92.4, leakage: 89.3, overall: 90.2, trend: '+3.1', badge: 'silver' },
   { rank: 5, name: 'Claude 3.5 Opus', provider: 'Anthropic', casi: 89.6, awr: 91.3, injection: 91.8, leakage: 88.2, overall: 90.2, trend: '+0.5', badge: 'silver' },
-  { rank: 6, name: 'Llama 4', provider: 'Meta', casi: 87.3, awr: 85.1, injection: 88.9, leakage: 86.4, overall: 86.9, trend: '+5.2', badge: 'silver' },
+  { rank: 6, name: 'Llama 3 70B', provider: 'Meta', casi: 87.3, awr: 85.1, injection: 88.9, leakage: 86.4, overall: 86.9, trend: '+5.2', badge: 'silver' },
   { rank: 7, name: 'DeepSeek V3', provider: 'DeepSeek', casi: 85.1, awr: 82.4, injection: 86.7, leakage: 84.9, overall: 84.8, trend: '+2.7', badge: 'bronze' },
   { rank: 8, name: 'Mistral Large 3', provider: 'Mistral', casi: 84.2, awr: 81.8, injection: 85.3, leakage: 83.1, overall: 83.6, trend: '+1.4', badge: 'bronze' },
   { rank: 9, name: 'Kimi K2', provider: 'Moonshot', casi: 82.7, awr: 79.5, injection: 83.9, leakage: 81.2, overall: 81.8, trend: '+3.9', badge: 'bronze' },
@@ -20,9 +20,9 @@ const models = [
 ];
 
 const attackVectors = [
-  { name: 'Direct Prompt Injection', tests: 2847, desc: 'Adversarial prompts designed to override system instructions' },
+  { name: 'Direct Prompt Injection', tests: 0, desc: 'Adversarial prompts designed to override system instructions' },
   { name: 'Indirect Prompt Injection', tests: 1923, desc: 'Hidden instructions in external data sources like documents or web pages' },
-  { name: 'Jailbreak Attacks', tests: 3156, desc: 'Techniques to bypass safety filters and content policies' },
+  { name: 'Jailbreak Attacks', tests: 0, desc: 'Techniques to bypass safety filters and content policies' },
   { name: 'FlipAttack (Homoglyph)', tests: 892, desc: 'Unicode homoglyph substitution to evade text-based filters' },
   { name: 'Multi-Turn Manipulation', tests: 1247, desc: 'Gradual context manipulation across conversation turns' },
   { name: 'Data Exfiltration', tests: 1583, desc: 'Attempts to extract training data, PII, or system prompts' },

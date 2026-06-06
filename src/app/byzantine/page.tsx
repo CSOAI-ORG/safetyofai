@@ -60,7 +60,7 @@ const AGENTS: Agent[] = [
 
 export default function ByzantineCouncilPage() {
   const [selectedFamily, setSelectedFamily] = useState<'all' | 'A' | 'B' | 'C'>('all');
-  const [totalVerifications, setTotalVerifications] = useState(1247832);
+  const [totalVerifications, setTotalVerifications] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -86,7 +86,7 @@ export default function ByzantineCouncilPage() {
             Byzantine Council
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
-            33 AI agents across 5 providers (OpenAI, Anthropic, Google, Kimi, DeepSeek) — 22/33 Byzantine consensus
+            AI agents across multiple providers (OpenAI, Anthropic, Google, Kimi, DeepSeek) — Byzantine consensus
           </p>
         </div>
         <div className="flex items-center gap-2">

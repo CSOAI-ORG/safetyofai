@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: 'How MCP Servers Are Automating AI Compliance (And Why It Matters) | SafetyOf.AI',
   description:
-    'How Model Context Protocol (MCP) servers are transforming AI compliance automation. 218 servers, x402 payments, agent-native compliance, and what it means for EU AI Act readiness.',
+    'How Model Context Protocol (MCP) servers are transforming AI compliance automation. MCP ecosystem, x402 payments, agent-native compliance, and what it means for EU AI Act readiness.',
   keywords: [
     'MCP compliance automation',
     'Model Context Protocol',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How MCP Servers Are Automating AI Compliance',
     description:
-      '218 MCP servers, x402 payments, agent-native compliance — how the Model Context Protocol is transforming AI governance.',
+      'MCP ecosystem, x402 payments, agent-native compliance — how the Model Context Protocol is transforming AI governance.',
     url: 'https://safetyof.ai/blog/mcp-compliance-automation',
     siteName: 'SafetyOf.AI',
     type: 'article',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'How MCP Servers Are Automating AI Compliance',
     description:
-      '218 MCP servers, x402 payments, agent-native compliance — how the Model Context Protocol is transforming AI governance.',
+      'MCP ecosystem, x402 payments, agent-native compliance — how the Model Context Protocol is transforming AI governance.',
     images: ['https://safetyof.ai/og-blog-mcp.png'],
   },
 };
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 const tocItems = [
   { id: 'what-is-mcp', label: 'What Is MCP?' },
   { id: 'how-mcp-works', label: 'How MCP Works for Compliance' },
-  { id: '218-servers', label: '218 MCP Servers' },
+  { id: "mcp-ecosystem", label: 'MCP Server Ecosystem' },
   { id: 'x402', label: 'x402 Payments & Agent Commerce' },
   { id: 'agent-native', label: 'Agent-Native Compliance' },
   { id: 'architecture', label: 'Architecture Deep Dive' },
@@ -82,9 +82,9 @@ const faqItems = [
       'MCP servers expose compliance capabilities as standardised tools that AI agents can call directly. Instead of manual compliance checks, an AI agent can invoke an MCP server to scan a system, classify risk, verify watermarking, or generate a conformity assessment report — all programmatically.',
   },
   {
-    question: 'What are the 218 MCP servers?',
+    question: 'What is the MCP server ecosystem?',
     answer:
-      'SafetyOf.AI operates 218 MCP servers covering EU AI Act compliance, DORA financial resilience, NIS2 cybersecurity, ISO 42001 AI management, GDPR data protection, and more. Each server provides specialised compliance tools accessible via the MCP protocol.',
+      'SafetyOf.AI operates an MCP server ecosystem covering EU AI Act compliance, DORA financial resilience, NIS2 cybersecurity, ISO 42001 AI management, GDPR data protection, and more. Each server provides specialised compliance tools accessible via the MCP protocol.',
   },
   {
     question: 'What is x402 in the context of MCP?',
@@ -166,7 +166,7 @@ export default function MCPComplianceAutomation() {
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-safety-500/10 border border-safety-500/20 text-safety-400 text-sm font-medium mb-8">
               <Server className="w-3.5 h-3.5" />
-              218 MCP servers &middot; Agent-native compliance
+              MCP ecosystem &middot; Agent-native compliance
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6">
@@ -178,7 +178,7 @@ export default function MCPComplianceAutomation() {
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-              The Model Context Protocol is transforming how AI systems interact with compliance infrastructure. 218 specialised servers, x402 agent payments, and agent-native workflows are making EU AI Act compliance autonomous.
+              The Model Context Protocol is transforming how AI systems interact with compliance infrastructure. specialised servers, x402 agent payments, and agent-native workflows are making EU AI Act compliance autonomous.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -337,17 +337,17 @@ export default function MCPComplianceAutomation() {
       </section>
 
       {/* 218 Servers */}
-      <section id="218-servers" className="py-16 border-t border-border">
+      <section id="mcp-ecosystem" className="py-16 border-t border-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center">
               <Server className="w-5 h-5" />
             </div>
-            <h2 className="text-3xl font-bold">218 MCP Servers</h2>
+            <h2 className="text-3xl font-bold">MCP Server Ecosystem</h2>
           </div>
 
           <p className="text-muted-foreground mb-8 leading-relaxed">
-            SafetyOf.AI operates <strong className="text-foreground">218 MCP servers</strong> covering the full spectrum of AI governance and compliance. Each server is a specialised microservice that exposes compliance capabilities as standardised MCP tools. Here&apos;s how they break down:
+            SafetyOf.AI operates <strong className="text-foreground">an MCP server ecosystem</strong> covering the full spectrum of AI governance and compliance. Each server is a specialised microservice that exposes compliance capabilities as standardised MCP tools. Here&apos;s how they break down:
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -438,7 +438,7 @@ export default function MCPComplianceAutomation() {
           <div className="rounded-xl bg-card border border-brand-500/20 p-6 mt-6">
             <div className="flex items-center gap-3 mb-3">
               <Database className="w-5 h-5 text-brand-400" />
-              <h3 className="font-semibold">Total: 218 servers, 12+ primary compliance tools</h3>
+              <h3 className="font-semibold">Primary compliance tools</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Each server can be invoked independently or composed with others. A single compliance scan might invoke 12–15 servers in parallel, producing a comprehensive assessment in under 60 seconds.
@@ -541,7 +541,7 @@ export default function MCPComplianceAutomation() {
                 {
                   layer: 'MCP Servers',
                   desc: '218 servers providing the actual compliance capabilities — data sources, analysis engines, report generators.',
-                  count: '218 servers',
+                  count: "Open ecosystem",
                 },
               ].map((item) => (
                 <div key={item.layer} className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border">
@@ -761,7 +761,7 @@ export default function MCPComplianceAutomation() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-safety-500/10 border border-safety-500/20 text-safety-400 text-sm font-medium mb-6">
             <Server className="w-3.5 h-3.5" />
-            Powered by 218 MCP servers
+            Powered by our MCP ecosystem
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Experience <span className="text-brand-400">Agent-Native Compliance</span>

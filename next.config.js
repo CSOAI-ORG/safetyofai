@@ -1,9 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {},
   reactStrictMode: true,
   swcMinify: true,
   poweredByHeader: false,
-  images: {
+  
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = config.resolve.fallback || {};
+      config.resolve.fallback['@libp2p/noise'] = false;
+      config.resolve.fallback['@libp2p/mplex'] = false;
+      config.resolve.fallback['@libp2p/webrtc'] = false;
+      config.resolve.fallback['@libp2p/websockets'] = false;
+      config.resolve.fallback['libp2p'] = false;
+      config.resolve.fallback['it-length-prefixed'] = false;
+      config.resolve.fallback['it-pipe'] = false;
+      config.resolve.fallback['uint8arrays'] = false;
+    }
+    return config;
+  },
+    images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'i.ytimg.com' },
       { protocol: 'https', hostname: 'img.youtube.com' },

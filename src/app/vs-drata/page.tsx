@@ -44,7 +44,7 @@ const COMPARISON_FEATURES = [
   {
     category: 'AI-Native Capabilities',
     features: [
-      { name: 'MCP (Model Context Protocol) servers', soai: true, drata: false, note: '218 MCP servers for automated compliance' },
+      { name: 'MCP (Model Context Protocol) servers', soai: true, drata: false, note: 'MCP ecosystem for automated compliance' },
       { name: 'A2A agent coordination', soai: true, drata: false, note: 'Multi-agent compliance workflows' },
       { name: 'HMAC-signed attestations', soai: true, drata: false, note: 'Cryptographic compliance proofs' },
       { name: 'AI risk classification engine', soai: true, drata: false, note: 'Automated EU AI Act risk scoring' },
@@ -246,7 +246,7 @@ export default function VsDrataPage() {
               {
                 icon: Server,
                 title: 'Open MCP Ecosystem',
-                description: 'SafetyOf.AI provides 218 MCP (Model Context Protocol) servers for automated compliance workflows. Drata has no MCP ecosystem — its automation is internal and proprietary.',
+                description: 'SafetyOf.AI provides MCP server ecosystem for automated compliance workflows. Drata has no MCP ecosystem — its automation is internal and proprietary.',
                 accent: 'safety',
               },
               {
@@ -457,7 +457,7 @@ export default function VsDrataPage() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  '218 MCP servers for compliance automation',
+                  'MCP ecosystem for compliance automation',
                   'Open protocol — any AI agent can connect',
                   'Programmatic compliance workflows via API',
                   'A2A agent coordination for multi-step audits',

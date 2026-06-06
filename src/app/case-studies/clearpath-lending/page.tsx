@@ -18,11 +18,11 @@ import {
 export const metadata: Metadata = {
   title: 'ClearPath Lending — 48-Hour EU AI Act Compliance | SafetyOf.AI',
   description:
-    'How a UK fintech achieved EU AI Act compliance for their AI credit scoring system in 48 hours, saving £55,000 compared to a Big 4 consultancy.',
+    'How a UK fintech achieved EU AI Act compliance for their AI credit scoring system with rapid turnaround, saving significantly compared to a Big 4 consultancy.',
   openGraph: {
     title: 'ClearPath Lending — 48-Hour EU AI Act Compliance',
     description:
-      'How a UK fintech achieved EU AI Act compliance in 48 hours for £5,000 instead of £60,000.',
+      'How a UK fintech achieved EU AI Act compliance rapidly for a fraction of Big 4 costs.',
     url: 'https://safetyof.ai/case-studies/clearpath-lending',
     siteName: 'SafetyOf.AI',
     type: 'article',
@@ -89,7 +89,7 @@ export default function ClearPathLendingCaseStudy() {
             {[
               { value: '48hrs', label: 'Time to Compliance' },
               { value: '£55K', label: 'Cost Savings' },
-              { value: '218', label: 'MCP Servers' },
+              { value: "Open ecosystem", label: "MCP Servers" },
             ].map((stat) => (
               <div key={stat.label} className="glass rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold text-brand-400">{stat.value}</p>
@@ -127,7 +127,7 @@ export default function ClearPathLendingCaseStudy() {
                   { label: 'Location', value: 'London, United Kingdom' },
                   { label: 'Founded', value: '2021' },
                   { label: 'AI Systems', value: 'Credit scoring model (high-risk)' },
-                  { label: 'Monthly Applications', value: '15,000+' },
+                  { label: "Monthly Applications", value: "High volume" },
                   { label: 'Regulatory Exposure', value: 'EU AI Act, FCA, GDPR' },
                 ].map((item) => (
                   <div key={item.label} className="flex justify-between py-2 border-b border-border last:border-0">
@@ -178,7 +178,7 @@ export default function ClearPathLendingCaseStudy() {
             </ul>
             <p>
               ClearPath approached a Big 4 consultancy for help. The quote came back at{' '}
-              <strong className="text-foreground">£60,000 with a 12-week timeline</strong>. With less than
+              <strong className="text-foreground">tens of thousands with a 12-week timeline</strong>. With less than
               90 days until the deadline and a lean compliance team of two, this was both unaffordable
               and too slow.
             </p>
@@ -192,7 +192,7 @@ export default function ClearPathLendingCaseStudy() {
                 <p className="text-sm text-muted-foreground">
                   Non-compliance with high-risk AI system obligations carries penalties of up to{' '}
                   <strong className="text-foreground">€15,000,000 or 3% of global annual turnover</strong>.
-                  For ClearPath, with £40M in annual revenue, this meant a potential fine of £1.2M+.
+                  For ClearPath, a mid-size fintech, this meant a substantial potential fine.
                 </p>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function ClearPathLendingCaseStudy() {
                 step: '01',
                 title: 'MCP Server Deployment (Hour 0-2)',
                 description:
-                  'SafetyOf.AI deployed 218 MCP servers to connect directly to ClearPath\'s AI infrastructure. The servers automatically discovered and catalogued the credit scoring model, its training data pipeline, decision endpoints, and logging systems.',
+                  'SafetyOf.AI deployed its MCP ecosystem to connect directly to ClearPath\'s AI infrastructure. The servers automatically discovered and catalogued the credit scoring model, its training data pipeline, decision endpoints, and logging systems.',
                 icon: Server,
               },
               {
@@ -286,8 +286,8 @@ export default function ClearPathLendingCaseStudy() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {[
               { metric: '48 hours', label: 'Total time from scan to attestation', icon: Clock },
-              { metric: '£5,000', label: 'Total cost (vs £60,000 Big 4 quote)', icon: TrendingUp },
-              { metric: '218', label: 'MCP servers deployed automatically', icon: Server },
+              { metric: '£5,000', label: 'Total cost (vs Big 4 quote)', icon: TrendingUp },
+              { metric: "Auto", label: "MCP servers deployed", icon: Server },
               { metric: 'Full', label: 'Article 6 classification completed', icon: Shield },
               { metric: 'Annex IV', label: 'Documentation auto-generated', icon: FileText },
               { metric: 'HMAC-SHA256', label: 'Cryptographically signed attestation', icon: Lock },
@@ -326,7 +326,7 @@ export default function ClearPathLendingCaseStudy() {
           <div className="relative rounded-2xl bg-gradient-to-br from-brand-500/10 via-card to-safety-500/5 border border-brand-500/20 p-8 sm:p-12">
             <Quote className="w-10 h-10 text-brand-400/30 mb-6" />
             <blockquote className="text-2xl sm:text-3xl font-bold leading-relaxed mb-6">
-              SafetyOf.AI delivered what our Big 4 consultancy quoted £60K for — in 48 hours, for £5K.
+              SafetyOf.AI delivered what our Big 4 consultancy quoted tens of thousands — with rapid turnaround, for a fraction of the cost.
             </blockquote>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center">

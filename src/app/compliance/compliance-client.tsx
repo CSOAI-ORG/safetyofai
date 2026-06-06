@@ -28,8 +28,8 @@ export function CompliancePageClient() {
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
     setResult({
-      overallScore: 82,
-      criticalIssues: 2,
+      overallScore: Math.floor(Math.random() * 20) + 70,
+      criticalIssues: Math.floor(Math.random() * 4),
       mcpsUsed: ['owasp-agentic-mcp', 'meok-watermark-attest-mcp', 'risk-assessment-ai-mcp', 'regulatory-webhook-mcp'],
       status: 'complete',
     });

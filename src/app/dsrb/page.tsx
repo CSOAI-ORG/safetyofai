@@ -36,7 +36,7 @@ const regions = [
 const certificationChannels = [
   { name: 'Development', description: 'Ongoing evaluation results from active assessments', items: 234, color: 'brand' },
   { name: 'Staging', description: 'Pre-release certification summaries awaiting review', items: 47, color: 'yellow' },
-  { name: 'Production', description: 'Approved certifications deployed to nations', items: 1891, color: 'safety' },
+  { name: 'Production', description: 'Approved certifications deployed to nations', items: 0, color: 'safety' },
   { name: 'Long-Term Support', description: 'Stable certifications for legacy AI systems', items: 312, color: 'muted' },
 ];
 

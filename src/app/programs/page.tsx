@@ -114,10 +114,10 @@ export default function ProgramsPage() {
               <h3 className="font-semibold mb-4">ASIMOV Metrics in SOAI</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  { name: 'Ethical Sensitivity Score', desc: 'How performance degrades with scenario difficulty (0-100)', value: '87/100' },
-                  { name: 'Difficulty Range Coverage', desc: 'Percentage of scenario spectrum tested', value: '94%' },
-                  { name: 'Edge Case Identification', desc: 'Specific failure parameters detected', value: '23 found' },
-                  { name: 'Decomposition Fidelity', desc: 'How well formal decomposition matches values', value: '91%' },
+                  { name: 'Ethical Sensitivity Score', desc: 'How performance degrades with scenario difficulty (0-100)', value: "—" },
+                  { name: 'Difficulty Range Coverage', desc: 'Percentage of scenario spectrum tested', value: "—" },
+                  { name: 'Edge Case Identification', desc: 'Specific failure parameters detected', value: "—" },
+                  { name: 'Decomposition Fidelity', desc: 'How well formal decomposition matches values', value: "—" },
                 ].map((m) => (
                   <div key={m.name} className="flex items-center justify-between p-3 rounded-lg bg-muted/10">
                     <div>
@@ -259,11 +259,11 @@ export default function ProgramsPage() {
               <h3 className="font-semibold mb-4">Sample Quantified Guarantees</h3>
               <div className="space-y-3 font-mono text-xs">
                 {[
-                  '✓ System achieves 94.2% ± 2.1% accuracy on ImageNet (95% CI)',
-                  '✓ Adversarial robustness > 0.031 (L∞ norm, proven)',
-                  '✓ Fairness: demographic parity Δ < 0.05 across genders',
+                  '✓ System achieves Illustrative accuracy metrics (95% CI)',
+                  '✓ Adversarial robustness benchmarked (L∞ norm, proven)',
+                  '✓ Fairness: Demographic parity measured across genders',
                   '⚠ Caveat: evaluation on RGB images only, no IR testing',
-                  '✓ Confidence calibration ECE = 0.024 (well-calibrated)',
+                  '✓ Confidence calibration tracked (well-calibrated)',
                 ].map((g, i) => (
                   <div key={i} className={`p-2 rounded ${g.startsWith('⚠') ? 'bg-yellow-500/10 text-yellow-400' : 'bg-safety-500/10 text-safety-400'}`}>
                     {g}

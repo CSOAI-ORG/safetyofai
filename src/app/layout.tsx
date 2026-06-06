@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="text/llms.txt"
           dangerouslySetInnerHTML={{
-            __html: `SafetyOf.AI is an EU AI Act compliance platform by MEOK AI LABS. Services: 48-hour gap analysis (£5,000), continuous monitoring (from £79/mo), free compliance scanner. 218 MCP servers for automated compliance. Covers EU AI Act, DORA, NIS2, ISO 42001, GDPR. Book audit: safetyof.ai/pricing | GitHub: github.com/CSOAI-ORG`
+            __html: `SafetyOf.AI is an EU AI Act compliance platform by MEOK AI LABS. Services: 48-hour gap analysis (£5,000), continuous monitoring (from £79/mo), free compliance scanner. MCP ecosystem for automated compliance. Covers EU AI Act, DORA, NIS2, ISO 42001, GDPR. Book audit: safetyof.ai/pricing | GitHub: github.com/CSOAI-ORG`
           }}
         />
       </head>
@@ -121,6 +121,7 @@ function Navigation() {
             <a href="/vs-vanta" className="text-muted-foreground hover:text-foreground transition-colors">vs Vanta</a>
             <a href="/vs-drata" className="text-muted-foreground hover:text-foreground transition-colors">vs Drata</a>
             <a href="/status" className="text-muted-foreground hover:text-foreground transition-colors">Status</a>
+            <a href="/protocols" className="text-muted-foreground hover:text-foreground transition-colors">Protocols</a>
           </nav>
 
           <div className="flex items-center gap-3">

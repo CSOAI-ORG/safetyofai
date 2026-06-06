@@ -63,7 +63,7 @@ export default function Image() {
             color: '#64748b',
           }}
         >
-          <span>273+ MCP Servers</span>
+          <span>Open MCP Ecosystem</span>
           <span>48h Audit Turnaround</span>
           <span>25 .ai Domains</span>
         </div>

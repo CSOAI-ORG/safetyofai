@@ -25,12 +25,12 @@ interface LiveFeed {
 
 export default function ThreatIntelPage() {
   const [stats] = useState<ThreatStats>({
-    totalThreats: 82300,
-    phishing: 27690,
-    malware: 17283,
-    scams: 24690,
-    deepfakes: 12637,
-    last24h: 347,
+    totalThreats: 0,
+    phishing: 0,
+    malware: 0,
+    scams: 0,
+    deepfakes: 0,
+    last24h: 0,
     trend: 'up',
   });
 
@@ -99,10 +99,10 @@ export default function ThreatIntelPage() {
       {/* Intelligence Sources Status */}
       <div className="grid md:grid-cols-4 gap-4 mb-8">
         {[
-          { name: 'PhishTank', desc: 'Community phishing database', count: '15,234', uptime: '99.9%' },
-          { name: 'URLhaus', desc: 'Malware URL distribution', count: '8,932', uptime: '99.8%' },
-          { name: 'OpenPhish', desc: 'Real-time phishing feed', count: '12,456', uptime: '99.7%' },
-          { name: 'AlienVault OTX', desc: 'Comprehensive threat intel', count: '45,678', uptime: '99.9%' },
+          { name: 'PhishTank', desc: 'Community phishing database', count: '—', uptime: '—' },
+          { name: 'URLhaus', desc: 'Malware URL distribution', count: '—', uptime: '99.8%' },
+          { name: 'OpenPhish', desc: 'Real-time phishing feed', count: '—', uptime: '99.7%' },
+          { name: 'AlienVault OTX', desc: 'Comprehensive threat intel', count: '—', uptime: '—' },
         ].map((src) => (
           <div key={src.name} className="rounded-xl bg-card border border-border p-5">
             <div className="flex items-center justify-between mb-3">

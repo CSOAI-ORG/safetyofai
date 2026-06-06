@@ -30,13 +30,13 @@ export const metadata: Metadata = {
 };
 
 const boilerplate50 =
-  'SafetyOf.AI is an EU AI Act compliance platform that delivers 48-hour audits, continuous monitoring, and HMAC-SHA256 cryptographic attestations. Built on 218 MCP servers, it automates compliance for EU AI Act, DORA, NIS2, and ISO 42001. Founded 2026, Lincolnshire, UK. MIT licensed.';
+  'SafetyOf.AI is an EU AI Act compliance platform that delivers rapid audits, continuous monitoring, and HMAC-SHA256 cryptographic attestations. Built on an MCP server ecosystem, it automates compliance for EU AI Act, DORA, NIS2, and ISO 42001. Founded 2026, Lincolnshire, UK. MIT licensed.';
 
 const boilerplate100 =
-  'SafetyOf.AI is a compliance automation platform purpose-built for the EU AI Act. It delivers 48-hour gap analyses, continuous compliance monitoring, and HMAC-SHA256 cryptographically signed attestations through a network of 218 MCP (Model Context Protocol) servers. The platform covers five regulatory frameworks — EU AI Act, DORA, NIS2, ISO 42001, and GDPR — with automated risk classification, Annex IV documentation generation, and Article 50 transparency verification. Founded in 2026 and headquartered in Lincolnshire, United Kingdom, SafetyOf.AI is MIT licensed and available from £0.';
+  'SafetyOf.AI is a compliance automation platform purpose-built for the EU AI Act. It delivers rapid gap analyses, continuous compliance monitoring, and HMAC-SHA256 cryptographically signed attestations through a network of MCP servers. The platform covers five regulatory frameworks — EU AI Act, DORA, NIS2, ISO 42001, and GDPR — with automated risk classification, Annex IV documentation generation, and Article 50 transparency verification. Founded in 2026 and headquartered in Lincolnshire, United Kingdom, SafetyOf.AI is MIT licensed and available from £0.';
 
 const boilerplate200 =
-  'SafetyOf.AI is a compliance automation platform purpose-built for organisations developing, deploying, or using AI systems subject to the EU AI Act. The platform delivers 48-hour compliance gap analyses, continuous real-time monitoring, and HMAC-SHA256 cryptographically signed attestations — providing tamper-evident compliance evidence that regulators and auditors can independently verify.\n\nPowered by a network of 218 MCP (Model Context Protocol) servers, SafetyOf.AI automates evidence collection, risk classification under Article 6 and Annex III, technical documentation generation per Annex IV, and Article 50 transparency requirements including watermarking and disclosure. The platform covers five regulatory frameworks — EU AI Act, DORA, NIS2, ISO 42001, and GDPR — with cross-referenced controls that eliminate duplicate compliance work.\n\nSafetyOf.AI was founded in 2026 by Nicholas Templeman and is headquartered in Lincolnshire, United Kingdom. The platform is MIT licensed and available in three tiers: Free (3 scans/day), Pro (£99/month), and Enterprise (£499/month with continuous monitoring and dedicated support).';
+  'SafetyOf.AI is a compliance automation platform purpose-built for organisations developing, deploying, or using AI systems subject to the EU AI Act. The platform delivers rapid compliance gap analyses, continuous real-time monitoring, and HMAC-SHA256 cryptographically signed attestations — providing tamper-evident compliance evidence that regulators and auditors can independently verify.\n\nPowered by a network of MCP servers, SafetyOf.AI automates evidence collection, risk classification under Article 6 and Annex III, technical documentation generation per Annex IV, and Article 50 transparency requirements including watermarking and disclosure. The platform covers five regulatory frameworks — EU AI Act, DORA, NIS2, ISO 42001, and GDPR — with cross-referenced controls that eliminate duplicate compliance work.\n\nSafetyOf.AI was founded in 2026 by Nicholas Templeman and is headquartered in Lincolnshire, United Kingdom. The platform is MIT licensed and available in three tiers: Free (3 scans/day), Pro (£99/month), and Enterprise (£499/month with continuous monitoring and dedicated support).';
 
 export default function PressPage() {
   return (
@@ -142,7 +142,7 @@ export default function PressPage() {
             {[
               { label: 'Founded', value: '2026', icon: Calendar },
               { label: 'Headquarters', value: 'Lincolnshire, United Kingdom', icon: Building2 },
-              { label: 'MCP Servers', value: '218 automated compliance servers', icon: Server },
+              { label: 'MCP Servers', value: 'automated compliance servers', icon: Server },
               { label: 'Licence', value: 'MIT Open Source', icon: FileText },
               { label: 'Frameworks Covered', value: 'EU AI Act, DORA, NIS2, ISO 42001, GDPR', icon: Shield },
               { label: 'Attestation Method', value: 'HMAC-SHA256 cryptographic signing', icon: Shield },
@@ -184,7 +184,7 @@ export default function PressPage() {
                 <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
                   <p>
                     Nicholas Templeman is the founder of SafetyOf.AI, an EU AI Act compliance platform
-                    built on 218 MCP servers. A technologist and entrepreneur based in Lincolnshire,
+                    built on an MCP server ecosystem. A technologist and entrepreneur based in Lincolnshire,
                     United Kingdom, Nicholas founded SafetyOf.AI in 2026 to make AI compliance accessible,
                     affordable, and automated.
                   </p>

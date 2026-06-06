@@ -23,14 +23,14 @@ const caseStudies = [
     location: 'United Kingdom',
     headline: 'How a UK Fintech Achieved EU AI Act Compliance in 48 Hours',
     summary:
-      'ClearPath Lending needed to classify their AI credit scoring system under the EU AI Act before the August 2 deadline. SafetyOf.AI delivered a full Article 6 classification, Annex IV documentation, and HMAC-signed attestation in 48 hours — for £5,000 instead of the £60,000 quoted by a Big 4 consultancy.',
+      'ClearPath Lending needed to classify their AI credit scoring system under the EU AI Act before the August 2 deadline. SafetyOf.AI delivered a full Article 6 classification, Annex IV documentation, and HMAC-signed attestation with rapid turnaround — for a fraction of the Big 4 consultancy quote.',
     quote:
       'SafetyOf.AI delivered what our Big 4 consultancy quoted £60K for — in 48 hours, for £5K.',
     quoteAuthor: 'CTO, ClearPath Lending',
     metrics: [
       { label: 'Time to Compliance', value: '48 hours' },
-      { label: 'Cost Savings', value: '£55,000' },
-      { label: 'MCP Servers Used', value: '218' },
+      { label: "Cost Savings", value: "Significant" },
+      { label: 'MCP Servers Used', value: 'Open ecosystem' },
     ],
     color: 'blue',
   },

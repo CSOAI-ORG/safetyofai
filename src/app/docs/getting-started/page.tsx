@@ -27,7 +27,7 @@ const STEPS = [
     step: 1,
     title: 'Install MCP Servers',
     description:
-      'The SafetyOf.AI governance pack bundles 218 MCP servers for compliance automation. Install with a single command.',
+      'The SafetyOf.AI governance pack bundles MCP servers for compliance automation. Install with a single command.',
     icon: Terminal,
     code: 'npx meok-setup --pack governance',
     codeDescription: 'Installs the full governance MCP pack including risk assessment, watermarking, and regulatory webhooks.',

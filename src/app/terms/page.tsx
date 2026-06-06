@@ -64,7 +64,7 @@ export default function TermsPage() {
             <li><strong>EU AI Act compliance scanning</strong> — automated risk classification under Article 6 and Annex III, with gap analysis across Articles 9-15.</li>
             <li><strong>Continuous compliance monitoring</strong> — ongoing tracking of your AI systems against regulatory requirements, with alerts when compliance drift is detected.</li>
             <li><strong>Compliance auditing</strong> — 48-hour gap analysis, Annex IV documentation generation, and HMAC-SHA256 signed attestations.</li>
-            <li><strong>MCP server infrastructure</strong> — 218 Model Context Protocol servers that automate evidence collection from your AI stack.</li>
+            <li><strong>MCP server infrastructure</strong> — MCP server ecosystem that automate evidence collection from your AI stack.</li>
             <li><strong>Multi-framework coverage</strong> — EU AI Act, DORA, NIS2, ISO 42001, and GDPR Article 22.</li>
           </ul>
           <p>

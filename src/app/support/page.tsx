@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   {
     question: 'How does the compliance scan work?',
     answer:
-      'We use 218 MCP servers to analyse your AI system against regulatory frameworks including the EU AI Act, DORA, NIS2, ISO 42001, and GDPR. Our automated scanner performs gap analysis across data governance, model risk, transparency requirements, and human oversight obligations — delivering a comprehensive report within 48 hours.',
+      'We use our MCP ecosystem to analyse your AI system against regulatory frameworks including the EU AI Act, DORA, NIS2, ISO 42001, and GDPR. Our automated scanner performs gap analysis across data governance, model risk, transparency requirements, and human oversight obligations — delivering a comprehensive report rapidly.',
   },
   {
     question: 'What\'s included in the £499 scan?',
