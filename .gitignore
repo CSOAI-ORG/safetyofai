@@ -41,3 +41,5 @@ next-env.d.ts
 
 # local data store
 /.data/
+.env.production
+.env*
